@@ -10,7 +10,6 @@ function kod_bledu()
 	fi
 }
 
-
 function pauza()
 {
 	if [ "$PAUZA" = "tak" ];
@@ -22,7 +21,6 @@ function pauza()
 		sleep $PAUZA_SEKUNDY
 	fi
 }
-
 
 function komunikat()
 {
@@ -123,7 +121,6 @@ function polska_litera()
 	fi
 }
 
-
 function konfiguracja_sys()
 {
 ## Konfiguracja systemu
@@ -198,7 +195,6 @@ function konfiguracja_sys()
 	fi
 }
 
-
 function restart_gnome()
 {
 	komunikat "Restart GNOME."
@@ -208,11 +204,8 @@ function restart_gnome()
 	sleep 3
 }
 
-
 function koniec()
 {
-## Koniec
-#########
 	pauza
 	if [ "$KASOWAC_POBRANE" = "tak" ]; then
 		komunikat "Usuwam pobrane pliki."
