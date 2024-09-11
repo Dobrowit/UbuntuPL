@@ -1,0 +1,220 @@
+### Podstawa polskiego tłumaczenia
+aspell-pl
+firefox-locale-pl
+fonts-3270
+fonts-babelstone-modern
+fonts-bajaderka
+fonts-clear-sans
+fonts-dejavu-extra
+fonts-hack
+fonts-lato
+fonts-mononoki
+fortunes-pl
+gnome-getting-started-docs-pl
+gnome-user-docs-pl
+hyphen-pl
+ipolish 
+konwert
+language-pack-gnome-pl
+language-pack-pl
+libreoffice-help-pl
+libreoffice-l10n-pl
+manpages-pl
+manpages-pl-dev
+mbrola-pl1
+myspell-pl
+mythes-pl
+tesseract-ocr-pol
+thunderbird-locale-pl
+wpolish
+xfonts-mona
+
+### Podstawowe
+byobu
+deborphan
+fish
+htop
+hunspell
+links
+neofetch
+p7zip-rar
+speedtest-cli
+synaptic
+ubuntu-restricted-extras
+subnetcalc
+jq
+cpu-checker
+
+### Bezpieczeństwo
+gufw
+keepassxc
+net-tools
+nmap
+
+### Dyskowe
+#clonezilla
+exfat-fuse
+exfat-utils
+#gparted
+mc
+ncdu
+ranger
+
+### Graficzne
+gimp
+heif-gdk-pixbuf
+inkscape
+#darktable
+#rawtherapee
+hugin
+#blender
+
+### Video
+#flowblade
+gstreamer1.0-crystalhd
+gstreamer1.0-plugins-bad
+#kdenlive
+mplayer
+mpv
+#obs-studio
+peek
+qnapi
+simplescreenrecorder
+smplayer
+#vlc
+
+### Programowanie
+build-essential
+git
+meld
+
+### Wygląd
+breeze-cursor-theme
+#gnome-shell-extension-arc-menu
+#gnome-shell-extension-gsconnect-browsers
+gnome-shell-extension-prefs
+gnome-shell-extensions
+gnome-tweaks
+papirus-icon-theme
+
+### Nautilus
+nautilus-admin
+nautilus-gtkhash
+nautilus-wipe
+
+### Przydatne
+dconf-editor
+debconf-utils
+gtkhash
+fortunes-ubuntu-server
+
+### Filtr reklam i łącznik GNOME dla Firefox'a
+# chrome-gnome-shell
+# webext-ublock-origin-firefox
+## nie zawsze działajĄ - trzeba wyłączyć/włączyć w ustawieniach aby uruchomić
+
+### Dodaje pogodę i zegar światowy także do obszaru powiadomień
+gnome-clocks
+gnome-weather
+
+### Dla laptopów
+powertop
+#smartmontools
+#tlp
+#tlp-rdw
+#tlpui
+
+### Menu
+extra-xdg-menus
+menulibre
+pdmenu
+qmenu
+smenu
+
+### Pakiet Libreoffice (instaluje z automatu JRE)
+#libreoffice-base
+#libreoffice-nlpsolver
+#libreoffice-numbertext
+#libreoffice-report-builder
+#libreoffice-script-provider-bsh
+#libreoffice-script-provider-js
+#libreoffice-script-provider-python
+#libreoffice-sdbc-hsqldb
+#libreoffice-sdbc-mysql
+#libreoffice-sdbc-postgresql
+#libreoffice-style-galaxy
+#libreoffice-style-hicontrast
+#libreoffice-style-human
+#libreoffice-style-karasa-jaga
+#libreoffice-style-oxygen
+#libreoffice-style-sifr
+#libreoffice-style-sukapura
+#libreoffice-style-tango
+libreoffice-templates
+#libreoffice-wiki-publisher
+openclipart-libreoffice
+#parlatype-libreoffice-helpers
+
+### Flatpak
+#flatpak
+#gnome-software
+#gnome-software-plugin-flatpak
+
+### CAD
+#freecad
+#librecad 
+
+### Office - dodatki
+#dia
+#gimagereader
+#gnote
+
+### Muzyczne
+#audacious
+#audacity
+#clementine
+goodvibes
+#lollypop
+
+### Inne zależności
+libsox-fmt-mp3
+python3-pip
+sox
+
+### Tapety
+ubuntu-wallpapers
+ubuntu-wallpapers-artful
+ubuntu-wallpapers-bionic
+ubuntu-wallpapers-cosmic
+ubuntu-wallpapers-disco
+ubuntu-wallpapers-eoan
+ubuntu-wallpapers-focal
+ubuntu-wallpapers-groovy
+ubuntu-wallpapers-groovy-raspi
+ubuntu-wallpapers-karmic
+ubuntu-wallpapers-lucid
+ubuntu-wallpapers-maverick
+ubuntu-wallpapers-natty
+ubuntu-wallpapers-oneiric
+ubuntu-wallpapers-precise
+ubuntu-wallpapers-quantal
+ubuntu-wallpapers-raring
+ubuntu-wallpapers-saucy
+ubuntu-wallpapers-trusty
+ubuntu-wallpapers-utopic
+ubuntu-wallpapers-vivid
+ubuntu-wallpapers-wily
+ubuntu-wallpapers-xenial
+ubuntu-wallpapers-yakkety
+ubuntu-wallpapers-zesty
+
+### Wirtualizacja
+#qemu-kvm
+#libvirt-daemon-system
+#libvirt-clients 
+#bridge-utils
+#virtinst
+#virt-manager
+
+### Rozrywka
+#lutris

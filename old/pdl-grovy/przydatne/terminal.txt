@@ -1,0 +1,28 @@
+dconf dump /org/gnome/terminal/ > gnome_terminal_settings_backup.txt
+dconf reset -f /org/gnome/terminal/
+dconf load /org/gnome/terminal/ < gnome_terminal_settings_backup.txt
+
+Scripts
+
+    https://github.com/aruhier/gnome-terminal-colors-solarized/blob/master/src/profiles.sh
+    https://github.com/arcticicestudio/nord-gnome-terminal/blob/develop/src/nord.sh
+    https://github.com/denysdovhan/one-gnome-terminal/blob/master/one-dark.sh
+    https://github.com/Mayccoll/Gogh/blob/master/gogh.sh
+    https://github.com/chriskempson/tomorrow-theme/blob/9aee367f0d9719ae8930f831adb6a897c76dbd0c/Gnome-Terminal/setup-theme.sh
+    https://gist.github.com/anmoljagetia/263d14f30db7b703ad3e
+    
+Nord
+
+git clone https://github.com/arcticicestudio/nord-gnome-terminal.git
+
+cd nord-gnome-terminal/src
+
+./nord.sh
+
+One Dark
+
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/denysdovhan/gnome-terminal-one/master/one-dark.sh)"
+
+Gogh has almost 200 versions of the theme
+
+bash -c  "$(wget -qO- https://git.io/vQgMr)"

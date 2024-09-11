@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Wykorzystanie dysku
+Comment=Wyświetlanie rozmiaru katalogów i dostępnego miejsca na dysku
+Icon=org.gnome.baobab
+DBusActivatable=true
+TryExec=baobab
+Exec=env XDG_DATA_DIRS=/opt/MagicUI/icons/Yaru/:$XDG_DATA_DIRS baobab %U
+Actions=
+MimeType=inode/directory;
+Categories=Filesystem;GNOME;GTK;System;System-Tools;X-GNOME-Utilities;
+Keywords=pamięć masowa;dyski;miejsce;przestrzeń;czyszczenie;analizator;foldery;katalogi;
+StartupNotify=true

@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html class=" havejs" lang="pl"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Milena - download</title>
+<meta http-equiv="Content-Language" content="pl">
+<link rel="stylesheet" media="screen" type="text/css" href="Milena%20-%20download_pliki/style.css">
+<!--[if IE]><link rel="stylesheet" media="screen" type="text/css" href="ie.css"><![endif]-->
+<meta name="description" content="System syntezy mowy dla Linuksa - download. W dziale ostatnie wersje syntezatora mowy - również dla Windows - aplikacje pomocnicze oraz kilka przydatnych aplikacji dla użytkowników konkurencyjnej Ivony">
+<meta name="generator" content="NEdit 5.5">
+<script type="text/javascript" src="Milena%20-%20download_pliki/script.js" defer="defer"></script>
+</head>
+<body>
+<div id="container">
+<a href="#tresc" id="skiper" accesskey="p">Przejdź do treści</a>
+<div id="top">
+<a id="logo" href="https://milena.polip.com/index.shtml#tresc" title="Strona główna"><img src="Milena%20-%20download_pliki/milena_logo.gif" alt="Milena - strona główna"></a>
+<h1>Milena <span>polski syntezator mowy dla systemu Linux</span></h1>
+<div class="auraltext" role="heading">Menu</div>
+<ul><li><a href="https://milena.polip.com/#tresc">Opis</a></li><li><a href="https://milena.polip.com/download.shtml#tresc">Download</a></li><li><a href="https://milena.polip.com/demo.shtml#tresc">Demo<span class="auraltext"> online</span></a></li><li><a href="https://milena.polip.com/kontakt.shtml#tresc">Kontakt</a></li></ul>
+</div>
+<div id="tresc">
+
+<div class="lmenu" id="lmenu"><strong role="heading" class="auraltext">Menu pomocnicze</strong><ul><li><a href="https://milena.polip.com/#tresc2">Opis</a></li><li><a href="https://milena.polip.com/readme.shtml#tresc2">README</a></li><li><a href="https://milena.polip.com/epnpl.shtml#tresc2">Notacja fonetyczna</a></li><li><a href="https://milena.polip.com/apps.shtml#tresc2" role="heading">Aplikacje</a><ul><li><a href="https://milena.polip.com/apps.shtml#dykcjonarz">Dykcjonarz</a></li><li><a href="https://milena.polip.com/apps.shtml#milenizer">Milenizer</a></li><li><a href="https://milena.polip.com/apps.shtml#milebook">Milena_book</a></li><li><a href="https://milena.polip.com/apps.shtml#milenoki">Milena_nokia</a></li><li><a href="https://milena.polip.com/apps.shtml#milesay">Milena_say</a></li><li><a href="https://milena.polip.com/apps.shtml#milesub">Milena_subplayer</a></li><li><a href="https://milena.polip.com/apps.shtml#milemix">Milena_submixer</a></li><li><a href="https://milena.polip.com/apps.shtml#milews">Milena_ws</a></li><li><a href="https://milena.polip.com/apps.shtml#milekadu">Milena_kadu</a></li><li><a href="https://milena.polip.com/apps.shtml#milegtk">Milena_gtk</a></li></ul></li><li><a href="https://milena.polip.com/abc.shtml#tresc2">Kreator audioksiążek</a></li><li><a href="https://milena.polip.com/m4win.shtml#tresc2">Milena Windows</a></li><li><a href="https://milena.polip.com/raspberry.shtml#tresc2">Milena Raspberry</a></li><li><a href="https://milena.polip.com/abc_ivona.shtml#tresc2">Milena i Ivona</a></li><li><a href="https://milena.polip.com/morfologik.shtml#tresc2">Milena i Morfologik</a></li><li><a href="https://milena.polip.com/tips.shtml#tresc2">Porady</a></li><li><a href="https://milena.polip.com/talkbrowser.shtml#tresc2">Mówiące przeglądarki</a></li></ul></div>
+
+<h2>Download</h2>
+
+<div class="uwaga">
+<h2>UWAGA!</h2>
+<p>Dla użytkowników Ubuntu: działa repozytorium PPA, zawierające najpotrzebniejsze
+programy (milena, milena_abc, ivolektor, moduł speech-dispatchera).
+Aby dodać repozytoria Mileny do listy, należy wprowadzić polecenia:
+</p><pre><code>sudo add-apt-repository ppa:ethanak/milena
+sudo apt-get update</code></pre>
+<p>W repozytorium znajdują pakiety dla wersji 16.04 i częściowo 18.04.
+Nie planuję tworzenia pakietów dla wersji Ubuntu poza LTS.
+
+</p></div>
+<h3>Milena</h3>
+<!--div class="uwaga">
+Na stronie Mbroli zamieszczona została niedziałająca wersja 64-bitowa. Użytkownicy
+64-bitowych dystrybucji (szczególnie Ubuntu) proszeni są o zainstalowanie Mbroli
+z pakietu znajdującego się w dystrybucji przed zainstalowaniem Mileny!</div>
+</div-->
+
+
+<h4>Dla końcowego użytkownika</h4>
+<dl>
+<dt><a href="http://www.polip.com/files/milena-0.2.92.2.tar.gz">milena-0.2.92.2.tar.gz</a></dt><dt>
+</dt><dd>Pełna wersja Mileny (do pierwszej instalacji)</dd>
+<dt><a href="http://www.polip.com/files/milena-update-0.2.92.2.tar.gz">milena-update-0.2.92.2.tar.gz</a></dt><dt>
+</dt><dd>Przeznaczony do update Mileny z wersji poniżej 0.2.92. Może być
+również instalowany przez użytkowników, którzy nie zamierzają używac kreatora audioksiązek.</dd>
+<dt><a href="http://www.polip.com/files/milena-data-0.2.92.2.tar.gz">milena-data-0.2.92.2.tar.gz</a></dt>
+<dd>Zawiera najnowszą wersję słowników Mileny-0.2.92</dd>
+</dl>
+<h4>Dla twórców dystrybucji</h4>
+<dl>
+<dt><a href="http://www.polip.com/files/milena-data-0.2.92.2.tar.gz">milena-data-0.2.92.2.tar.gz</a></dt>
+<dd>Zawiera najnowszą wersję słowników Mileny-0.2.92</dd>
+<dt><a href="http://www.polip.com/files/milena-dist-0.2.92.tar.gz">milena-dist-0.2.92.tar.gz</a></dt>
+<dd>Milena we własnej osobie. Wymaga milena-data-0.2.92.*</dd>
+<dt><a href="http://www.polip.com/files/milena-basewords-0.2.10.tar.gz">milena-basewords-0.2.10.tar.gz</a></dt>
+<dd>Plik głównego słownika dla kreatora audioksiązek (opcjonalny)</dd>
+<dt><a href="http://www.polip.com/files/milena_versions.dat">milena_versions.dat</a></dt>
+<dd>Plik zawierający wersje poszczególnych komponentów w postaci:
+<pre class="file"><code>milena_version=0.2.92
+milena_data_version=0.2.92.2
+milena_base_version=0.2.10
+</code></pre></dd>
+
+</dl>
+<!--h4>Dla odważnych</h4>
+<dl>
+<dt><a href="http://www.polip.com/files/milena-nightly.tar.gz">milena-nightly.tar.gz</a></dt>
+<dd>Nightly build. Nie zawiera basewords.dat. Instalujesz na wlasne ryzyko!</dd>
+</dl-->
+
+<!--h4>Dla ostrożnych (czyli gdyby powyższe nie chciały działać)</h4>
+<dl>
+<dt><a href="http://www.polip.com/files/milena-0.2.2.1.tar.gz">milena-0.2.2.1.tar.gz</a></dt>
+<dd>Poprzednia wersja</dd>
+<dt><a href="http://www.polip.com/files/milena-full-0.1.9-7.tar.gz">milena-full-0.1.9-7.tar.gz</a></dt>
+<dd>Ostatnia wersja z linii 0.1</dd>
+</dl-->
+<h4>Dla użytkowników Ubuntu i pochodnych</h4>
+<p>Z uwagi na duże trudności, jakie sprawia instalacja Mileny w Ubuntu, podaję kolejne kroki jakie należy wykonać:
+</p><ol style="list-style-type:lower-alpha">
+<li>ściągnij plik <a href="http://www.polip.com/files/milena-0.2.92.2.tar.gz">milena-0.2.92.2.tar.gz</a>
+do katalogu Pobrane w Twoim katalogu domowym
+</li><li>wejdź do katalogu Pobrane
+</li><li>rozpakuj plik 0.2.92.2.tar.gz
+</li><li>wejdź do katalogu 0.2.92.2
+</li><li>uruchom plik <code>ubuntu_install_milena.sh</code>.
+</li></ol>
+<p>W celu wykonania tych czynności należy po ściągnięciu pliku otworzyć terminal
+i wykonać następujące polecenia:
+</p><pre><code>cd ~/Pobrane
+tar -xzf milena-0.2.92.2.tar.gz
+cd milena-0.2.92.2
+./ubuntu_install_milena.sh</code></pre>
+<h3 id="speechd">Speech-Dispatcher</h3>
+<ul>
+<li><a href="http://www.polip.com/files/sd_milvona-0.1.12.tar.gz">Uniwersalny moduł Milena + Ivona</a>
+</li>
+</ul>
+<p>Moduł pochodzi spoza oficjalnej ścieżki speech-dispatchera. Nie wymaga dotcom.
+</p><p>Użytkownicy Ubuntu i Vinuxa - proszę zainstalować speech-dispatcher-milvona z mojego repozytorium.
+</p><p>Potrzebne do kompilacji (ew. odpowiedniki dla konkretnych dystrybucji):
+</p><ol list-style="lower-alpha">
+<li>ivolektor
+</li><li>milena (jak najnowsza wersja)
+</li><li>libao-devel
+</li><li>sndfile-devel
+</li><li>libpulse-devel (tylko jeśli używasz PulseAudio)
+</li></ol>
+<p>Kompilacja (po wejściu do rozpakowanego katalogu):
+</p><pre><code>
+./configure
+make
+sudo make install
+</code></pre>
+<p>Po skompilowaniu i zainstalowaniu modułu:
+</p><ol>
+<li>Po zainstalowaniu modułu dodaj w pliku
+/etc/speech-dispatcher/speechd.conf
+po pierwszej linii zaczynającej się od AddModule
+linijkę:
+<pre><code>AddModule "milvona" "sd_milvona" "milvona.conf".</code></pre>
+Jeśli używasz starszych wersji speech-dispatchera
+sprawdź czy istnieje katalog ~/.speech-dispatcher/conf
+- jeśli tak, powtórz tę zmianę w pliku
+~/.speech-dispatcher/conf/speechd.conf
+oraz skopiuj plik /etc/speech-dispatcher/modules/milvona.conf
+do katalogu ~/.speech-dispatcher/conf/modules<br>
+Następnie zrestartuj speech-dispatchera oraz (jeśli używasz) Orkę.
+
+</li><li> Plik konfiguracyjny zostanie skopiowany do pliku ~/.sd_milvona_rc
+i ten plik należy edytować. Zmiany wprowadzone w tym pliku będą
+natychmiast uwzględnione przez moduł bez konieczności
+przeładowywania.
+
+</li><li> Aby korzystać z głosów Ivony, należy postępować zgodnie
+z dokumentacją ivolektora. Dokumentacja znajduje się w
+katalogu /usr/share/doc/libivolektor1 w dystrybucji Ubuntu
+oraz w plikach źródłowych ivolektora.
+</li></ol>
+<ul>
+<li><a href="http://www.polip.com/files/syntalk-speechd-0.1.tgz">Moduł generic dla Syntalka</a>
+</li>
+</ul>
+<p>Moduł zawiera plik konfiguracyjny syntalk-generic (dla linuksowej wersji 1.6 syntalka).
+Wymaga binariów Mileny (ściślej polecenia <code>milena_convert</code>)
+</p><h3 id="abcreator">Kreator audioksiążek</h3>
+<p><strong>Milena ABC</strong> - program
+do tworzenia audioksiążek (jak sama nazwa wskazuje - Audio Book Creator).
+Pełny opis na stronie <a href="https://milena.polip.com/abc.shtml">Kreator&nbsp;audioksiążek</a>.
+</p><h4>Download</h4>
+<ul>
+<li><a href="http://www.polip.com/files/milena_abc-0.3.68.tar.gz">Wersja oficjalna:
+milena_abc-0.3.68</a></li>
+<!--li><a href="http://www.polip.com/files/milena_abc-0.3.61.tar.gz">Wersja poprzednia:
+milena_abc-0.3.61</a></li-->
+<!--li>Wersja dla testerów: <a href="http://www.polip.com/files/milena_abc-0.3.4.tar.gz">milena_abc-0.3.4</a>
+(eksperymentalna współpraca z Ivoną)</li-->
+</ul>
+<p><strong>Uwaga dla użytkowników Ubuntu i pochodnych</strong><br>
+W związku z licznymi pytaniami związanymi z trudnością instalacji Mileny ABC w Ubuntu,
+od wersji 0.2.8 dołączony został plik <code>ubuntu_install.sh</code>.
+Aby zainstalować Milenę ABC na Ubuntu należy:
+</p><ol style="list-style-type:lower-alpha">
+<li>rozpakować plik milena_abc-0.x.x.tar.gz
+</li><li>wejść utworzonego do katalogu milena_abc
+</li><li>uruchomić skrypt ubuntu_install.sh
+</li></ol>
+<p>Jeśli ściągnięta została wersja 0.3.14c do katalogu ~/Pobrane, należy otworzyć terminal i wykonać następujące polecenia:
+</p><pre><code>cd ~/Pobrane
+tar -xzf milena_abc-0.3.14c.tar.gz
+cd milena_abc-0.3.14c
+./ubuntu_install.sh</code></pre>
+<p><strong>Uwaga dla użytkowników pozostałych dystrybucji!</strong><br>
+Od wersji 0.2.0 Milena ABC bazuje na autotools, stąd zmiana sposobu instalacji.
+Najprostszy sposób to:
+</p><pre><code>./configure
+make
+sudo make install</code></pre>
+
+<p><strong>Wymagania dla
+<a href="http://www.polip.com/files/milena_abc-0.3.13.tar.gz">wersji 0.3.13</a></strong> (pakiety "devel" lub "dev", w zależności od dystrybucji):
+</p><ul>
+<li>gtk+-2 (lub gtk+3)
+</li><li>gtksourceview2 (lib gtksourceview3)
+</li><li>curl (opcjonalny od wersji 0.3.21)
+</li><li>pcre
+</li><li>lame (mp3lame)
+</li><li>libmpg123
+</li><li>libsamplerate</li>
+<li><i>Opcjonalnie: faac lub libaacplus</i>
+</li><li><i>Opcjonalnie: libepub</i>
+</li><li><i>od 0.3.21 tylko dla systemów z PulseAudio: libpulse</i>
+</li><li>python 2.7 (biblioteki) - od wersji 0.3.33
+</li><li><i>opcjonalnie: libenchant - od wersji 0.3.34</i>
+</li><li>milena w wersji co najmniej 0.2.44 (wersja pełna razem z basewords.dat)
+</li><li>enca i ao (powinny być zainstalowane - wymagane przez Milenę)
+</li></ul>
+<p>W Ubuntu będą to odpowiednio:</p>
+<ul>
+<li>libgtk2.0-dev
+</li><li>libgtksourceview2.0-dev
+</li><li>libcurl4-gnutls-dev
+</li><li>libpcre3-dev
+</li><li>libmpg123-dev
+</li><li>libmp3lame-dev
+</li><li><i>libsamplerate0-dev</i>
+</li><li><i>libfaac-dev (libaacplus nie ma w dystrybucji)</i>
+</li><li><i>libepub-dev</i>
+</li><li>libpulse-dev
+</li><li>python-dev
+</li><li>libenchant-dev
+</li></ul>
+<p>Dodatkowe wymagania dla pełni szczęścia:
+</p><ul>
+<li>Ghostscript, tesseract i cuneiform jeśli chcemy dobrać się do najbardziej popsutych pdf-ów
+</li><li><i><a href="http://www.polip.com/files/libivolektor-0.1.9.tar.gz">libivolektor</a></i> w wersji co najmniej 0.1.3 (patrz niżej - dla współpracy z Ivoną)
+</li><li>Ivona (wersja ivonacl lub SAPI - aby było z kim współpracować)
+</li></ul>
+
+<p>Dla wersji 0.3.13 i wyższych możliwa jest kompilacja z GTK+3. W przypadku
+znalezienia obu wersji konfigurator uzna że ważna jest wersja GTK+3,
+chyba że zostanie zastosowany parametr --disable-gtk3.
+
+</p><p>Do skorzystania z wewnętrznej przeglądarki należy zainstalować pakiet gtk-webkit
+(gtk-webkit3 dla GTK+3).
+W przypadku problemów przeglądarkę można wyłączyć podając w configure
+parametr --disable-browser.
+</p><p>Dodatkowo do konwersji z PDF potrzebny jest pdftotext (pakiet poppler-tools lub xpdf-tools, zależnie od dystrybucji).
+Instalator Mileny dla Ubuntu automatycznie zainstaluje ten pakiet.
+</p><p><strong>UWAGA! Od wersji 0.1.18 Milena_ABC przejęła większość funkcji submixera (można utworzyć film z lektorem
+z poziomu interfejsu programu)</strong><br>
+Submixer będzie standardowo wkompilowany jeśli znaleziona zostanie biblioteka
+samplerate. Aby skompilować Milenę ABC bez submiksera, należy użyć przełącznika
+--disable-submixer przy configure.
+</p><p>Domyślnie Milena ABC po znalezieniu biblioteki epub (ebook-tools-devel w niektórych dystrybucjach)
+kompiluje się z możliwością wczytania formatu epub. Aby wyłączyć obsługę tego formatu
+należy uzyć przełącznika --disable-epub przy configure.
+</p><p>Można wymusić kompilację Mileny ABC bez obsługi Ivony podając
+parametr --disable-ivona przy configure.
+</p><p><strong>Uwaga!</strong><br>
+Z uwagi na problemy techniczne kodowanie AAC zostało wyłączone. Jeśli koniecznie musisz tworzyć pliki AAC
+lub chcesz pomóc w tworzeniu programu:
+</p><dl>
+<dt>Dla kodera FAAC</dt>
+<dd>Zainstaluj pliki devel biblioteki faac oraz dołącz parametr --with-faac do configure
+</dd><dt>Dla kodera 3GPP (aka libaacplus)</dt>
+<dd>Zainstaluj bibliotekę libaacplus ze strony <a href="http://tipok.org.ua/node/17">tipok.org.ua</a> oraz
+dołącz parametr --with-aacplus do configure.
+</dd></dl>
+<p><strong>Uwaga!</strong><br>
+Z uwagi na nieokreślona licencję program nie zawiera biblioteki enkodera AMR, tak więc
+nie będzie możliwe utworzenie książki dla Nokia Audiobook. W celu ściągnięcia
+enkodera i skompilowania biblioteki należy wejść do katalogu amrlib i wykonać
+polecenia opisane w pliku readme.txt
+</p><h3>Dodatki do Mileny</h3>
+<ul>
+<!--
+<li><a name="msmix" href="http://www.polip.com/files/milena_submixer-0.1.2.tar.gz">Milena_submixer</a></li>
+<li><a name="mgtk" href="http://www.polip.com/files/milena_gtk-0.2.tar.gz">Milena-gtk</a></li>
+</ul>
+<h3 id="dlinne">Inne</h3>
+<ul>
+<li><a href="http://www.polip.com/files/osapi_gtk.tar.gz">GTK wrapper dla OpenSAPI
+</a> (wymaga uruchomionego osapi-srv.tcl)
+<li><a href="http://www.polip.com/files/powiedz_sapi.tgz">zamiennik "powiedz" (dla Kadu)
+</a> (wymaga uruchomionego osapi-srv.tcl)
+<li><a href="http://www.polip.com/files/osapi_0.1.2.tar.gz">Python Open-Sapi 0.1.2</a>.
+Zawiera:<ul>
+<li>Poprawioną (prowizorycznie) wersję serwera rockbox open-sapi
+<li>Interfejs Pythona do open-sapi (moduł opensapi 0.1.2)
+<li>Programy sapi_say i sapi_gtk
+</ul>
+-->
+<li><a href="http://www.polip.com/files/libivolektor-0.1.9.tar.gz">Biblioteka
+libivolektor-0.1.9
+</a>
+do komunikacji z różnymi wersjami Ivony. Testowany z Ivoną 1.5 i Ivoną 2 (zarówno na Wine
+jak i Windows) oraz Ivoną 1 w wersji CLI (natywna linuksowa).
+<!--
+<li><a href="http://www.polip.com/files/ivol_sapi51.tar.gz">Ivol_SAPI51</a> czyli
+minimalny zestaw programów umożliwiający współpracę ivolektora z
+syntezatorem IVONA. Przeznaczony do instalacji na "czystym" Wine, zawiera również
+pliki pozwalające na korzystanie z Ivony uruchomionej na Windows.
+-->
+</li></ul>
+<!--
+<h3>I trochę staroci...</h3>
+<ul>
+<li><a href="http://www.polip.com/files/ivona_tools-0.1.0.tar.gz">Ivona
+Tools</a> - zestaw przydatnych programików dla użytkowników linuksowej
+wersji syntezatora Ivona. Zawiera:
+<dl>
+<dt>ivona_say</dt>
+<dd>generuje komunikaty głosowe ("gadające" echo).</dd>
+<dt>ivona_ws</dt>
+<dd>emuluje serwer mowy Orca. Przewidziany przede wszystkim dla użytkowników
+<a href="http://firevox.clcworld.net/" class="extern">Fire Voxa</a> i
+<a href="http://clickspeak.clcworld.net/" class="extern">CLiCk, Speak</a>.</dd>
+<dt>ivona_ssip</dt>
+<dd>emuluje część funkcjonalności
+<a href="http://www.freebsoft.org/speechd" class="extern">Speech-Dispatchera</a>. Przeznaczony
+do współpracy ze screenreaderem <a  class="extern" href="http://yasr.sourceforge.net/">Yasr</a>
+lub zmodyfikowaną wersją programu FireVox.</dd>
+</dl>
+<li><a href="http://www.polip.com/files/libdumbtts-0.3.2.tar.gz">libdumbtts</a>
+- biblioteka konieczna (między innymi) do działania ivona_tools.
+<li><a href="http://www.polip.com/files/clc-4-tts_bundle_v3.8spd_release.xpi">Fire Vox SPD</a>
+- zmodyfikowana wersja programu Fire Vox, pozwalająca na bezpośrednią komunikację
+ze speech-dispatcherem (lub ivona_ssip).
+<li><a href="http://www.polip.com/files/spltbook.zip">Split Book</a> -
+program pomocniczy do tworzenia audiobooków. Dzieli tekst na pliki rozdziałów
+według zamieszczonych w tekście markerów oraz koryguje prawidłowe wstawianie
+pauz między akapitami. Plik zawiera skompilowaną wersję dla Windows oraz
+źródła dla Linuksa (również aplikacji potrafiącej przeczytać za pomocą linuksowej
+Ivony tekst z tagami SAPI4).
+<li><a href="http://www.polip.com/files/kadu_speech-0.1.tgz">Kadu-Speech</a> -
+zamienniki programu "powiedz" przeznaczone dla komunikatora <a
+href="http://www.kadu.net/"  class="extern">Kadu</a>.
+Pozwalają na współpracę Kadu z syntezatorem eSpeak (również poprzez Mbrolę),
+speech-dispatcherem lub Ivoną.<br>
+Wszystkie skrypty przy pierwszym uruchomieniu tworzą pliki konfiguracyjne
+w ~/.kadu/speech_&lt;moduł&gt;.conf<br>.
+<b>Uwaga!</b>. Wstępna konfiguracja skryptu dla Ivony zakłada istnienie
+serwera nasłuchującego na localhost:9123. W przypadku innego adresu serwera
+lub użyciu bezpośrednio programu ivonacl należy po pierwszym uruchomieniu
+skryptu podać właściwe ścieżki w pliku ~/.kadu/speech_ivona.conf!<br>
+W przypadku modułu espeak możliwe jest użycie polecenia "play" zamiast
+wbudowanej obsługi audio.
+</ul>
+-->
+</div>
+<div class="footer">
+© 2007-2019 <span id="ethanak"><a href="mailto:ethanak@polip.com">ethanak@polip.com</a></span>
+
+<a id="anybrowser" href="http://www.anybrowser.org/campaign/"><img src="Milena%20-%20download_pliki/w3c-browserany.gif" alt="Najlepiej oglądać przeglądarką"></a>
+</div>
+</div>
+
+
+
+
+</body></html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html class=" havejs" lang="pl"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Milena - syntezator mowy dla Linuksa</title>
+<meta http-equiv="Content-Language" content="pl">
+<link rel="stylesheet" media="screen" type="text/css" href="Milena%20-%20syntezator%20mowy%20dla%20Linuksa_pliki/style.css">
+<!--[if IE]><link rel="stylesheet" media="screen" type="text/css" href="ie.css"><![endif]-->
+<meta name="description" content="System syntezy mowy dla Linuksa">
+<meta name="generator" content="NEdit 5.5">
+<script type="text/javascript" src="Milena%20-%20syntezator%20mowy%20dla%20Linuksa_pliki/script.js" defer="defer"></script>
+</head>
+<body>
+<div id="container">
+<a href="#tresc" id="skiper" accesskey="p">Przejdź do treści</a>
+<div id="top">
+<a id="logo" href="https://milena.polip.com/index.shtml#tresc" title="Strona główna"><img src="Milena%20-%20syntezator%20mowy%20dla%20Linuksa_pliki/milena_logo.gif" alt="Milena - strona główna"></a>
+<h1>Milena <span>polski syntezator mowy dla systemu Linux</span></h1>
+<div class="auraltext" role="heading">Menu</div>
+<ul><li><a href="https://milena.polip.com/#tresc">Opis</a></li><li><a href="https://milena.polip.com/download.shtml#tresc">Download</a></li><li><a href="https://milena.polip.com/demo.shtml#tresc">Demo<span class="auraltext"> online</span></a></li><li><a href="https://milena.polip.com/kontakt.shtml#tresc">Kontakt</a></li></ul>
+</div>
+<div id="tresc">
+
+<div class="uwaga">
+<h2>NOWOŚCI!</h2>
+<p>
+Od wersji 0.2.77 (wersja ABC 0.3.62) Milena może bezpośrednio korzystać z przetworzonych danych
+<a href="http://morfologik.blogspot.com/">Morfologika</a>. Sposób instalacji
+danych oraz krótki opis na stronie <a href="https://milena.polip.com/morfologik.shtml#tresc2">Milena i Morfologik</a>.
+</p>
+<hr>
+<p>Powróciłem do stworzenia używalnej wersji <a href="https://milena.polip.com/m4win.shtml">Milena dla Windows</a>!
+</p><hr>
+<p>Dla użytkowników Ubuntu: działa repozytorium PPA, zawierające najpotrzebniejsze
+programy (milena, milena_abc, ivolektor, moduł speech-dispatchera).
+Aby dodać repozytoria Mileny do listy, należy wprowadzić polecenia:
+</p><pre><code>sudo add-apt-repository ppa:ethanak/milena
+sudo apt-get update</code></pre>
+<p>W repozytorium znajdują pakiety dla wersji 16.04 i częściowo 18.04.
+Nie planuję tworzenia pakietów dla wersji Ubuntu poza LTS.
+
+</p><hr>
+Uruchomiony został <a href="http://ebookconverter.eu/convert-to-audiobook-pl.php">konwerter książek online</a>.
+Bliższe informacje na stronie <a href="http://ebookconverter.eu/">ebookconverter.eu</a>.
+<hr>
+<p>Od wersji 0.3.7 <a href="https://milena.polip.com/download.shtml#abcreator">Milena&nbsp;ABC</a>
+dzięki opracowaniu biblioteki
+<a href="http://www.polip.com/files/libivolektor-0.1.9.tar.gz">libivolektor</a>
+w pełni współpracuje z syntezatorem Ivona (zarówno w wersji SAPI
+uruchomionej w środowisku Wine jak i w natywnej linuksowej ivonacl).
+Generowanie ortograficznych tekstów dla Ivony zostało również włączone
+do głównej biblioteki Mileny.
+<!--p>Z uwagi na powtarzające się pytania, zostałą uruchomiona grupa dyskusyjna pod adresem:
+<a href="http://groups.google.com/group/milena-tts">http://groups.google.com/group/milena-tts</a>.
+<p>Dostępna jest wstępna wersja <a href="/download.shtml#speechd">dedykowanego modułu do speech-dispatchera</a> (patche dla wersji
+0.7 oraz binarne moduły dla Ubuntu 10.04 32 bit). Osoby chętne do testowania (w szczególności użytkowników
+screenreadera Orca) bardzo proszę o kontakt.-->
+</p></div>
+<div class="uwaga">
+Pakiety potrzebne do działania Mileny (ich nazwy mogą różnić się w poszczególnych dystrybucjach!):
+<ol>
+<li>mbrola</li>
+<li>mbrola-voice-pl</li>
+<li>enca-devel</li>
+<li>antiword (do milenizera)</li>
+<li>odt2txt (do milenizera)</li>
+<li>poppler-utils lub xpdf-utils (pdftotext, do milenizera)
+</li><li>libao-devel</li>
+<li>sox v&gt;=14.1</li>
+<li>lame (do milena_book)</li>
+<li>vorbis-tools (oggenc, do milena_book)</li>
+<li>faac (do milena_book)</li>
+<li>amrwb (do milena_nokia)</li>
+<li>ImageMagick (do milena_nokia)</li>
+</ol>
+</div>
+<div class="lmenu" id="lmenu"><strong role="heading" class="auraltext">Menu pomocnicze</strong><ul><li><a href="https://milena.polip.com/#tresc2">Opis</a></li><li><a href="https://milena.polip.com/readme.shtml#tresc2">README</a></li><li><a href="https://milena.polip.com/epnpl.shtml#tresc2">Notacja fonetyczna</a></li><li><a href="https://milena.polip.com/apps.shtml#tresc2" role="heading">Aplikacje</a><ul><li><a href="https://milena.polip.com/apps.shtml#dykcjonarz">Dykcjonarz</a></li><li><a href="https://milena.polip.com/apps.shtml#milenizer">Milenizer</a></li><li><a href="https://milena.polip.com/apps.shtml#milebook">Milena_book</a></li><li><a href="https://milena.polip.com/apps.shtml#milenoki">Milena_nokia</a></li><li><a href="https://milena.polip.com/apps.shtml#milesay">Milena_say</a></li><li><a href="https://milena.polip.com/apps.shtml#milesub">Milena_subplayer</a></li><li><a href="https://milena.polip.com/apps.shtml#milemix">Milena_submixer</a></li><li><a href="https://milena.polip.com/apps.shtml#milews">Milena_ws</a></li><li><a href="https://milena.polip.com/apps.shtml#milekadu">Milena_kadu</a></li><li><a href="https://milena.polip.com/apps.shtml#milegtk">Milena_gtk</a></li></ul></li><li><a href="https://milena.polip.com/abc.shtml#tresc2">Kreator audioksiążek</a></li><li><a href="https://milena.polip.com/m4win.shtml#tresc2">Milena Windows</a></li><li><a href="https://milena.polip.com/raspberry.shtml#tresc2">Milena Raspberry</a></li><li><a href="https://milena.polip.com/abc_ivona.shtml#tresc2">Milena i Ivona</a></li><li><a href="https://milena.polip.com/morfologik.shtml#tresc2">Milena i Morfologik</a></li><li><a href="https://milena.polip.com/tips.shtml#tresc2">Porady</a></li><li><a href="https://milena.polip.com/talkbrowser.shtml#tresc2">Mówiące przeglądarki</a></li></ul></div>
+
+<p>Zainstaluj: <a href="http://www.polip.com/files/milena-0.2.92.2.tar.gz">milena-0.2.92.2.tar.gz</a> czyli
+wreszcie wersja końcowa.
+</p><h2 id="tresc2">Co to właściwie jest</h2>
+Milena to system <acronym title="Text to Speech" lang="en">TTS</acronym>
+(czyli coś przetwarzającego tekst na mowę),
+zorientowany na przetwarzanie "surowych" tekstów (artykuły prasowe,
+e-booki itp) i pisany od początku z myślą o języku polskim.
+Nie jest to w ścisłym znaczeniu syntezator mowy -
+Milena jedynie tworzy dane (tzn. realizuje fazę <acronym title="Natural Language Processor" lang="en">NLP</acronym>)
+syntezy), a sama synteza mowy (w znaczeniu syntezy dźwięku, czyli DSP) to zadanie dla
+innego programu. W chwili obecnej Milena potrafi utworzyć dane dla
+syntezatora Mbrola, ale nic nie stoi na przeszkodzie aby zastosować inny
+silnik wymowy (np. <a class="extern" href="http://espeak.sourceforge.net/">eSpeak</a>
+czy - po pewnych modyfikacjach - <a class="extern" href="http://www.ivo.pl/">Ivona</a>).
+<p>Mimo iż systemem na którym powstaje Milena jest Linux (sprawdzone
+działanie na PLD Th 32-bit [<a href="http://www.polip.com/files/milena.spec">nieoficjalny&nbsp;spec</a>], Ubuntu 8.10/9.04 32-bit i CentOS 5.2 64-bit), prawdopodobnie nie
+powinno być problemu z przystosowaniem Mileny do działania na innych
+systemach (w tym również Windows).
+</p><p>Milena tworzona jest z myślą przede wszystkim o użytkowniku -
+eksperymentatorze, stąd wszystkie pliki z których korzysta to zwykłe
+tekstowe pliki czytelne dla człowieka. Nie ma też (jak w eSpeaku)
+konieczności kompilacji, a pliki danych mogą znajdować się w różnych
+miejscach (np. główny plik translatora w katalogu instalacyjnym,
+a plik na którym eksperymentujemy w katalogu bieżącym). Kolejność
+przetwarzania reguł jest ściśle określona (Milena nie próbuje znaleźć
+"najlepszej pasującej" reguły, a w zależności od fazy przetwarzania
+stosuje pierwszą lub ostatnią pasującą). Do edycji tych plików nie jest
+również potrzebna znajomość jakiegokolwiek języka programowania.
+</p><p>Nie oznacza to, że Milena nie może być użyta po prostu jako
+syntezator mowy ogólnego przeznaczenia.
+</p><h2>Podziękowania</h2>
+<p>Przede wszystkim <strong>Marcinowi Miłkowskiemu</strong> za jego
+<a class="extern" href="http://morfologik.blogspot.com/">Morfologika</a>, bez którego
+powstanie Mileny byłoby niemożliwe.
+</p><p>&lt;p role="ironia"&gt;<i>Firmie Ivo Software, która tak długo zwleka
+z udostępnieniem Ivony Desktop, że zdążyłem przez ten czas napisać
+własny system TTS.</i>&lt;/p&gt;
+</p><h2>Coś a la changelog</h2>
+
+<h3>Różnice w stosunku do wersji 0.1.7</h3>
+<ul>
+<li>Zmieniony algorytm ustalania akcentu pomocniczego
+(melodia powinna być bardziej naturalna).
+</li><li>Rozpaczliwa próba odróżnienia "lady sklepowej" od "lady Makbet"
+(po włączeniu języka angielskiego).
+</li><li>Poprawione algorytmy akcentowania jednosylabowych wyrazów na końcu frazy.
+</li><li>Dodana korekta dla kilku błędnie wymawianych przez Mbrolę zbitek fonemów
+(np. "cz-samogłoska" na końcu frazy).
+</li></ul>
+
+<h3>Różnice w stosunku do wersji 0.1.6</h3>
+<p>Wyłącznie poprawki techniczne. Usunięte błędy powodujące błędne akcentowanie
+mimo prawidłowo wprowadzonych reguł. 
+
+</p><h3>Różnice w stosunku do wersji 0.1.5</h3>
+<ul>
+<li>Poprawki w kodzie (to już tradycyjnie) i słownikach.
+</li><li>Instalator dla Ubuntu Linux (instaluje również mbrolę i pl1).
+</li><li>Uwzględnienie "ubuncizmów" (stara wersja soxa) i "peeldyzmów"
+(lame <acronym title="z bliżej nieznanych przyczyn">hgw&nbsp;why</acronym> wymaga 
+podania -x).
+</li><li>Skrypt dla kadu-notify-speech pozwalający podłączyć Milenę jako syntezator mowy zamiast "powiedz".
+</li><li>Próba poprawienia jakości błędnie zapisanych samogłosek w pl1
+(np. sekwencji <code style="white-space:nowrap">"ts-o-_"</code>).
+</li></ul>
+<h3>Różnice w stosunku do wersji 0.1.4</h3>
+<ul>
+<li>Dodany podział na subfrazy w trybie lektorskim:<br>
+przy dłuższej frazie Milena szuka miejsc w których można podzielić
+frazę. Miejscami takimi są ostatnie spójniki występujące między
+dwoma czasownikami. Po napotkaniu spójnika spełniającego ten
+warunek, jeśli poprzedzająca i następująca subfraza mają co najmniej
+cztery sylaby wstawiany jest punkt podziału, odpowiadający intonacji
+przecinka lub średnika (w zależności od następnej subfrazy) lecz
+z krótszą pauzą.
+</li><li>Dodana możliwość tworzenia reguł zależnych od języka określonego w -L.
+Przykładowe reguły:
+<pre><code>letter q k
+[en]:uA	kw$
+[es]:uA k$
+:uA	kw$
+</code></pre>
+<ol style="list-style:lower-alpha">
+<li>jeśli załadowany jest język angielski, zbitka "qu" z następującą samogłoską
+będzie wymawiana jak "kł" (np. "squid")
+</li><li>jeśli załadowany jest język hiszpański, w powyższej zbitce zniknie "u"
+(np. "Marquez")
+</li><li>jeśli nie jest załadowany żaden z powyższych języków, przyjmuje się
+wyraz pochodzenia łacińskiego wymawiany przez "kw" (np. "quantum")
+</li></ol>
+<p>Dodatkowo dla języka hiszpańskiego uwzględniany jest akcent (oprócz 'ó').
+</p></li><li>milena_say używa algorytmu konwersji zgodnego z milenizerem przy wymawianiu
+tekstu podanego w linii poleceń w kodowaniu innym niż ISO-8859-2.
+</li><li>No i jak zwykle poprawki w kodzie.
+</li></ul>
+<h3>Różnice w stosunku do wersji 0.1.3</h3>
+<ul>
+<li>translator i moduł mbroli są teraz bibliotekami (libmilena.so i
+libmilena_mbrola.so). Dodano funkcje ułatwiające integrację Mileny
+z aplikacjami pomocniczymi.
+</li><li>całkowicie zmieniony dykcjonarz, poprawione błędy w milenizerze.
+</li><li>automatyczne wykrywanie czy w systemie jest libenca i w zależności
+od tego kompilacja milenizera z enca lub wbudowaną funkcją sprawdzania
+kodowania.
+</li><li>dodane pliki umożliwiające współpracę ze speech-dispatcherem (umożliwia
+to między innymi użycie Mileny do współpracy ze screenreaderami).
+</li><li>Dodane odczytywanie ułamków zwykłych w postaci licznik/mianownik (w
+ograniczonym zakresie wartości).
+</li><li>W przeciwieństwie do pewnego Najlepszego Syntezatora™ Milena prawidłowo
+akcentuje zdania "mnie ma nie stać" i "mnie na nie stać" (próbuje wykryć
+czy "nie" to przypadkiem nie zaimek). Swoją drogą ciekawe, kiedy Najlepszy
+Syntezator się tego dorobi...
+</li><li>i jak zwykle poprawki w kodzie.
+</li></ul>
+<h3>Różnice w stosunku do wersji 0.1.2</h3>
+<ul>
+<li>Drobne poprawki w kodzie i słownikach
+</li><li>Dodane aplikacje pomocnicze (dykcjonarz, milenizer, milena_book)
+</li></ul>
+<h3>Różnice w stosunku do wersji 0.1.1</h3>
+<ul>
+<li>dodana dokumentacja frazera
+</li><li>dodana wymowa (w translatorze) ciągów liter niewystepujących w języku
+polskim (sing,cing) lub rzadko występujących (tz, stein) oraz sekwencji
+litery "í" z następującą samogłoską (np. Díaz, María).
+</li><li>dodana możliwość zakończenia zdania przez frazer, jeśli w czasie
+przetwarzania <code>recognize</code> stwierdzony zostanie prawdopodobny
+koniec zdania.
+</li><li>dodanie w słowniku frazera możliwości wystąpienia opcjonalnego myślnika -
+(np. "pop~corn" pasuje do "popcorn", "pop corn", "pop-corn") oraz dopasowania
+dowolnego napisu do końca wyrazu.
+</li><li>Usunięty błąd powodujący "PANIC" Mbroli w niektórych przypadkach
+przy obniżeniu wysokości głosu.
+</li><li>Drobne poprawki w plikach translatora, słownika i frazera.
+</li></ul>
+<h3>Różnice w stosunku do wersji 0.1</h3>
+<ul>
+<li>modyfikatory wymowy pozwalające zmienić prędkość i wysokość fragmentu
+frazy
+</li><li>umożliwienie ignorowania znaków sterujących frazerem
+</li><li>umożliwienie wymawiania wszystkich znaków
+</li></ul>
+
+<h2>Wymagania</h2>
+
+<ol>
+<li> gcc i gmake - do instalacji
+</li><li> mbrola i polski głos do mbroli - do tworzenia mowy
+</li><li> lame, sox, aplay czy cokolwiek - do owej mowy słuchania
+</li><li> libenca - przydatna (choć niewymagana) do skompilowania milenizera
+</li><li> libao - do skompilowania serwera milena_ws
+</li></ol>
+
+<h2>Trochę więcej informacji</h2>
+<ul>
+<li><a href="https://milena.polip.com/readme.shtml#tresc">README</a> (trochę w skrócie i nie do końca aktualne,
+ale pozwala się zorientować).
+</li><li><a href="https://milena.polip.com/epnpl.shtml#tresc">notacja fonetyczna</a> zastosowana w Milenie (również
+nie do końca aktualna, w rzeczywistości w czasie tworzenia Mileny było
+tam nieco zmian, ale prawdopodobnie będą konieczne następne).
+</li></ul>
+</div>
+<div class="footer">
+© 2007-2019 <span id="ethanak"><a href="mailto:ethanak@polip.com">ethanak@polip.com</a></span>
+
+<a id="anybrowser" href="http://www.anybrowser.org/campaign/"><img src="Milena%20-%20syntezator%20mowy%20dla%20Linuksa_pliki/w3c-browserany.gif" alt="Najlepiej oglądać przeglądarką"></a>
+</div>
+</div>
+
+
+
+
+</body></html>

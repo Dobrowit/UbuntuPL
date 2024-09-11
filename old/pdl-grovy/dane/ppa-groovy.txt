@@ -1,0 +1,22 @@
+## Best source of PPAs https://www.ubuntuupdates.org/ppas
+#ppa:atareao/atareao
+#ppa:atareao/telegram
+#ppa:canonical-kernel-team/ppa
+#ppa:freecad-maintainers/freecad-stable
+#ppa:inkscape.dev/stable
+#ppa:kdenlive/kdenlive-stable
+#ppa:kicad/kicad-5.1-releases
+#ppa:kritalime/ppa
+#ppa:libreoffice/ppa
+ppa:linuxuprising/apps
+ppa:linuxuprising/shutter
+ppa:lutris-team/lutris
+ppa:oibaf/graphics-drivers
+ppa:otto-kesselgulasch/gimp
+#ppa:persepolis/ppa
+#ppa:phoerious/keepassxc
+#ppa:scribus/ppa
+#ppa:team-xbmc/ppa
+#ppa:thomas-schiex/blender
+ppa:ubuntuhandbook1/apps
+#ppa:videolan/master-daily

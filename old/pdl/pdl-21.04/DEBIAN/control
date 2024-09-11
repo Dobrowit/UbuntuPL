@@ -1,0 +1,6 @@
+Package: PDL
+Version: 20.04
+Architecture: all
+Maintainer: Radek radekcz@gmail.com
+Description: Skrypt polonizujący
+ Skrypt polonizujący Ubuntu

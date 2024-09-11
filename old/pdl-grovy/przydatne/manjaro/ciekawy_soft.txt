@@ -1,0 +1,28 @@
+https://gitlab.com/cunidev/gestures
+https://github.com/caffeine-ng/caffeine-ng
+https://github.com/maoschanz/dynamic-wallpaper-editor
+https://github.com/tristanheaven/gtkhash
+https://github.com/linuxmint/webapp-manager
+https://github.com/ranger/ranger
+https://wiki.gnome.org/Apps/DconfEditor
+https://github.com/tsujan/Kvantum/tree/master/Kvantum
+
+Rozszerzenia GNOME:
+===================
+https://gitlab.com/arcmenu-team/Arc-Menu
+https://micheleg.github.io/dash-to-dock/
+https://github.com/home-sweet-gnome/dash-to-panel
+https://gitlab.com/rastersoft/desktop-icons-ng
+https://github.com/andyholmes/gnome-shell-extension-gsconnect/wiki
+https://github.com/ubuntu/gnome-shell-extension-appindicator
+https://gitlab.com/rmnvgr/nightthemeswitcher-gnome-shell-extension/
+https://gitlab.gnome.org/GNOME/gnome-shell-extensions
+https://github.com/hardpixel/unite-shell
+
+Wygląd GNOME:
+=============
+https://github.com/vinceliuice/Matcha-gtk-theme
+https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
+https://github.com/TheScrawl/xcursor-breeze-neutral
+https://www.pling.com/s/Wallpapers/browse/
+

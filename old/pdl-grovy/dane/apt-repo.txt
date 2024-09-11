@@ -1,0 +1,20 @@
+## Wine
+sudo dpkg --add-architecture i386
+wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
+sudo add-apt-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ focal main'
+sudo apt-get update
+sudo apt-get install --install-recommends winehq-stable
+
+## OpenVPN
+wget -O - https://swupdate.openvpn.net/repos/repo-public.gpg | apt-key add -
+echo "deb http://build.openvpn.net/debian/openvpn/stable focal main" | sudo tee /etc/apt/sources.list.d/openvpn-aptrepo.list
+sudo apt-get update
+sudo apt-get install openvpn
+
+## Element formerly Riot.im
+sudo apt install -y wget apt-transport-https
+sudo wget -O /usr/share/keyrings/riot-im-archive-keyring.gpg https://packages.riot.im/debian/riot-im-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/riot-im-archive-keyring.gpg] https://packages.riot.im/debian/ default main" |
+    sudo tee /etc/apt/sources.list.d/riot-im.list
+sudo apt update
+sudo apt install riot-desktop

@@ -1,0 +1,15 @@
+name: pdl
+base: core18
+version: '21.04'
+summary: Polska Dystrybucja Linuxa
+description: |
+  PDL to zestaw skryptów do szybkiej instalacji
+  i ustawiania Ubuntu.
+
+grade: devel
+confinement: devmode
+
+parts:
+  my-part:
+    # See 'snapcraft plugins'
+    plugin: nil
