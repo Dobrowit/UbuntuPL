@@ -22,15 +22,15 @@ KASOWAC_POBRANE='nie'
 
 ## Załadowanie funkcji i wyświetlenie banerka oraz zgody
 ###############################################################################
-source funkcje.sh ; clear
+source scripts/funkcje.sh ; clear
 echo -e "\e[107m\e[30m          \e[101m\e[97m          \e[49m\e[39m"
 echo -e "\e[107m\e[30m $NAZWA \e[101m\e[97m $WERSJA_UBUNTU    \e[49m\e[39m"
 echo -e "\e[107m\e[30m          \e[101m\e[97m          \e[49m\e[39m"
 
 # Fix do ikony na doku
-cp -f zenity.desktop ~/.local/share/applications/zenity.desktop
+cp -f skel/.local/share/applications/zenity.desktop ~/.local/share/applications/zenity.desktop
 
-msgbox "Instalator $NAZWA $WERSJA_UBUNTU" "info.txt" 1
+msgbox "Instalator $NAZWA $WERSJA_UBUNTU" "docs/info.txt" 1
 
 ###############################################################################
 ###############################################################################
@@ -102,7 +102,7 @@ timedatectl ; pauza ; timedatectl timesync-status
 if [ "`timedatectl show | grep LocalRTC`" = "LocalRTC=no" ]; then
 	sudo awk -F\' '/menuentry / {print $2}' /boot/grub/grub.cfg | grep -q "Windows"
 	if [ "$?" = "0" ]; then
-		msgbox "Informacja" "info-rtc.txt"
+		msgbox "Informacja" "docs/rtc.txt"
 	fi
 fi
 ###############################################################################
@@ -131,8 +131,8 @@ echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select tr
 echo ufw ufw/enable boolean true | sudo debconf-set-selections
 
 # Przygotowanie list
-cat apt-install.txt | grep -v '^#' | grep -v -e '^$' | sort > apt-install.lista
-cat apt-remove.txt | grep -v '^#' | grep -v -e '^$' | sort > apt-remove.lista
+cat pkg/apt-install.txt | grep -v '^#' | grep -v -e '^$' | sort > apt-install.lista
+cat pkg/apt-remove.txt | grep -v '^#' | grep -v -e '^$' | sort > apt-remove.lista
 
 komunikat "Uruchamiam apt install..."
 # każdy pakiet instalowany jest oddzielnie
@@ -151,14 +151,14 @@ sudo apt autoremove -y
 rm *.lista
 
 komunikat "Instalacja pakietów spoza repo..."
-source deb-install.txt
+source pkg/deb.txt
 if [ "$KASOWAC_POBRANE" = "tak" ]; then
     rm *.deb
 fi
 
 if [ "$SNAP" = "tak" ]; then
     komunikat "Instalacja pakietów snap..."
-    cat snap.txt | grep -v '^#' | grep -v -e '^$' | sort > snap.lista
+    cat pkg/snap.txt | grep -v '^#' | grep -v -e '^$' | sort > snap.lista
     sudo xargs -L 1 -a snap.lista snap install
     rm snap.lista
 fi
