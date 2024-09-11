@@ -1,0 +1,11 @@
+# Skype
+#wget https://go.skype.com/skypeforlinux-64.deb ; sudo apt install ./skypeforlinux-64.deb
+
+# Teamviewer
+#wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb ; sudo apt install ./teamviewer_amd64.deb
+
+# Steam
+#wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb ; sudo apt install ./steam.deb
+
+# XnViewMP
+#wget https://download.xnview.com/XnViewMP-linux-x64.deb ; sudo apt install ./XnViewMP-linux-x64.deb

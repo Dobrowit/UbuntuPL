@@ -1,7 +1,0 @@
-Enable touchscreen gestures in Linux Firefox
-
-If you have a Tablet PC or Laptop with touchscreen on Linux you probably don't have the touchscreen gestures enabled. To enable them follow two simple steps:
-
-    In Firefox open page about:config find the line dom.w3c_touch_events.enabled and set the value to 1.
-
-    In file /etc/security/pam_env.conf add line (in the end of file) MOZ_USE_XINPUT2 DEFAULT=1 and reboot your machine
