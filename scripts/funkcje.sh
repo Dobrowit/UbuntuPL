@@ -90,37 +90,6 @@ function klawisz()
 	read -s -n 1
 }
 
-function polska_litera()
-{
-## Dodatkowe czcionki
-#####################
-	pauza
-	komunikat "Polska Litera."
-	if test -f ~/.local/share/doc/polska-litera/polskalitera.txt; then
-		echo -e "\e[96mPolska Litera została już wcześniej zainstalowana.\e[39m"
-	else
-		mkdir ~/.fonts
-
-		wget -c http://www.polskalitera.pl/wp-content/uploads/2016/02/Apolonia-2016-pakiet.zip -P pobrane/
-		wget -c http://www.polskalitera.pl/wp-content/uploads/2012/07/APOLONIA-500.zip -P pobrane/
-		wget -c http://www.polskalitera.pl/wp-content/uploads/2014/10/Milenium.zip -P pobrane/
-		wget -c http://www.polskalitera.pl/wp-content/uploads/2014/10/Milosz.zip -P pobrane/
-		wget -c http://www.polskalitera.pl/wp-content/uploads/2012/07/Iskra.zip -P pobrane/
-		wget -c http://www.polskalitera.pl/wp-content/uploads/2018/03/antykwa-taranczewskiego2018.zip -P pobrane/
-		wget -c http://www.polskalitera.pl/wp-content/uploads/2012/07/Gotika.zip -P pobrane/
-
-		unzip -o pobrane/Apolonia-2016-pakiet.zip -d ~/.fonts/
-		unzip -o pobrane/APOLONIA-500.zip -d ~/.fonts/
-		unzip -o pobrane/Milenium.zip -d ~/.fonts/
-		unzip -o pobrane/Milosz.zip -d ~/.fonts/
-		unzip -o pobrane/Iskra.zip -d ~/.fonts/
-		unzip -o pobrane/antykwa-taranczewskiego2018.zip -d ~/.fonts/
-		unzip -o pobrane/Gotika.zip -d ~/.fonts/
-
-		echo -e "\e[96mCzcionki z projektu polskalitera.pl zainstalowane.\e[39m"
-	fi
-}
-
 function konfiguracja_sys()
 {
 ## Konfiguracja systemu
@@ -183,16 +152,7 @@ function konfiguracja_sys()
 	sed -e '4,4s/Humanity,hicolor/Papirus,Humanity,hicolor/g' /usr/share/icons/Yaru/index.theme > index.theme
 	sudo mv -f -v index.theme /usr/share/icons/Yaru/index.theme
 
-	if [ "$FLATPAK" = "tak" ]; then
-		sudo apt -y install flatpak
-		#sudo apt -y install gnome-software-plugin-flatpak
-		flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-		komunikat "Uruchamiam snap install."
-		cat dane/flatpak.txt | grep -v '^#' | grep -v -e '^$' | sort > dane/flatpak.lista
-		sudo xargs -L 1 -a dane/flatpak.lista flatpak -y install
-		rm dane/flatpak.lista
-	fi
 }
 
 function restart_gnome()

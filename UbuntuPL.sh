@@ -7,22 +7,24 @@
 ###############################################################################
 ###############################################################################
 
+
 ## Ustawienia
 ###############################################################################
 NAZWA='UbuntuPL'
 WERSJA_UBUNTU='24.04'
-SNAP='tak'
-FLATPAK='nie'
-NOTIFY='nie'
-PAUZA='nie' # czekanie na naciśnięcie klawisza
-PAUZA_SEKUNDY=1
-KASOWAC_POBRANE='nie'
+SNAP='tak'				# instaluje pakiety snap z listy
+FLATPAK='nie'			# instaluje obsługę flatpak i pakiety z listy
+NOTIFY='nie'			# wyskakujące powiadomienia
+PAUZA='nie'				# czekanie na naciśnięcie klawisza
+PAUZA_SEKUNDY=1 		# zwłoka aby komunikaty nie zaiwaniały jak głúpie
+KASOWAC_POBRANE='tak'	# jeśli coś zostanie pobrane, po zainstalowaniu usunąć
 ###############################################################################
 ###############################################################################
 
+
 ## Załadowanie funkcji i wyświetlenie banerka oraz zgody
 ###############################################################################
-source scripts/funkcje.sh ; clear
+clear ; source scripts/funkcje.sh
 echo -e "\e[107m\e[30m          \e[101m\e[97m          \e[49m\e[39m"
 echo -e "\e[107m\e[30m $NAZWA \e[101m\e[97m $WERSJA_UBUNTU    \e[49m\e[39m"
 echo -e "\e[107m\e[30m          \e[101m\e[97m          \e[49m\e[39m"
@@ -31,18 +33,17 @@ echo -e "\e[107m\e[30m          \e[101m\e[97m          \e[49m\e[39m"
 cp -f skel/.local/share/applications/zenity.desktop ~/.local/share/applications/zenity.desktop
 
 msgbox "Instalator $NAZWA $WERSJA_UBUNTU" "docs/info.txt" 1
+###############################################################################
+###############################################################################
 
-###############################################################################
-###############################################################################
 
 ## Sprawdzanie środowiska - lokalizacja i czas
 ###############################################################################
-
 # Konfiguruj pakiety deb szczegułowo za pomocą dialogów gnome
 # Dostępne opcje można sprawdzić przy pomocy polecenia:
-# sudo debconf-show debconf
+# 	sudo debconf-show debconf
 # To samo można wyklikać za pomocą polecenia:
-# sudo dpkg-reconfigure debconf
+# 	sudo dpkg-reconfigure debconf
 echo "debconf debconf/priority select low" | sudo debconf-set-selections
 echo "debconf debconf/frontend select Gnome" | sudo debconf-set-selections
 
@@ -108,6 +109,7 @@ fi
 ###############################################################################
 ###############################################################################
 
+
 ## Aktualizacja systemu
 ###############################################################################
 pauza
@@ -121,6 +123,7 @@ if [ "$SNAP" = "tak" ]; then
 fi	
 ###############################################################################
 ###############################################################################
+
 
 ## Instalacja dodatkowych pakietów i usuwanie zbędnych
 ###############################################################################
@@ -165,12 +168,23 @@ fi
 
 if [ "$FLATPAK" = "tak" ]; then
 	komunikat "Instalacja pakietów flatpak..."
-	## TU DODAĆ OBSŁUGĘ FLATPAK ##
+	sudo apt -y install flatpak
+	#sudo apt -y install gnome-software-plugin-flatpak
+	flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+	komunikat "Instalacja pakietów flatpak..."
+	cat pkg/flatpak.txt | grep -v '^#' | grep -v -e '^$' | sort > flatpak.lista
+	sudo xargs -L 1 -a flatpak.lista flatpak -y install
+	rm flatpak.lista
 fi
 ###############################################################################
 ###############################################################################
 
-new_polska_litera
-new_konfiguracja_sys
-new_restart_gnome
-new_koniec
+
+
+
+
+
+
+
+#restart_gnome
+#koniec
