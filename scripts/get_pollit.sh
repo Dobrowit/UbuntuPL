@@ -1,13 +1,7 @@
-more licencja.txt
+#!/bin/bash
 
-while true; do
-    read -p "Czy zgadzasz się na postanowienia licencji? " yn
-    case $yn in
-        [Tt]* ) echo "Zaczynam instalację..." & break;;
-        [Nn]* ) exit;;
-        * ) echo "Odpowiedz - 'tak' lub 'nie'! ";;
-    esac
-done
+# Uwaga - autor już nie udostępnia do pobrania tej czcionki.
+# Linki mogą być nieaktywne.
 
 mkdir ~/.fonts
 
@@ -32,4 +26,6 @@ unzip Iskra.zip -d ~/.fonts/
 unzip antykwa-taranczewskiego2018.zip -d ~/.fonts/
 unzip Gotika.zip -d ~/.fonts/
 
-rm Apolonia-2016-pakiet.zip APOLONIA-500.zip Milenium.zip Milosz.zip Iskra.zip antykwa-taranczewskiego2018.zip Gotika.zip
+if [ "$KASOWAC_POBRANE" = "tak" ]; then
+    rm *.zip
+fi	
