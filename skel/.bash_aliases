@@ -81,6 +81,7 @@ alias x_gpu='cat ~/.local/share/xorg/Xorg.0.log | grep mem'
 alias x_input='cat ~/.local/share/xorg/Xorg.0.log | grep libinput'
 alias apt_search='dpkg -S'
 alias lsof_reg="lsof | grep REG | awk '{print $NF}' | sort -u"
+alias chprompt_git="export PS1='$([[ -z $(git status -s 2>/dev/null) ]] && echo "\[\e[32m\]" || echo "\[\e[31m\]")$(__git_ps1 "(%s)")\[\e[00m\]\$ '"
 
 #alias nplaywave='for i in /nas/multimedia/wave/*.wav; do mplayer "$i"; done'
 #alias nplayogg='for i in /nas/multimedia/ogg/*.ogg; do mplayer "$i"; done'
