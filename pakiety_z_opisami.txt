@@ -1,0 +1,12 @@
+true
+utils
+
+7-Zip file archiver with a high compression ratio
+true
+utils
+
+RAR plugin for 7-Zip
+true
+utils
+
+7-Zip file archiver with a high compression ratio (standalone)

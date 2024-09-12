@@ -12,6 +12,7 @@
 ###############################################################################
 NAZWA='UbuntuPL'
 WERSJA_UBUNTU='24.04'
+DEBS='tak'				# instaluje pakiety deb spoza repozytorów (pobrane)
 SNAP='tak'				# instaluje pakiety snap z listy
 FLATPAK='nie'			# instaluje obsługę flatpak i pakiety z listy
 NOTIFY='nie'			# wyskakujące powiadomienia
@@ -155,8 +156,24 @@ rm *.lista
 
 komunikat "Instalacja pakietów spoza repo..."
 source pkg/deb.txt
-if [ "$KASOWAC_POBRANE" = "tak" ]; then
-    rm *.deb
+
+if [ "$DEBS" = "tak" ]; then
+    komunikat "Instalacja pakietów snap..."
+    cat pkg/debs.txt | grep -v '^#' | grep -v -e '^$' | sort > debs.lista
+	
+	while IFS= read -r url; do
+	if [[ -n "$url" ]]; then # Sprawdzamy, czy linia nie jest pusta
+		filename=$(basename "$url") # Wyciągamy nazwę pliku z URL
+		echo "Pobieram $filename..." ;  wget -O "$filename" "$url"
+		echo "Instaluję $filename..." ; sudo apt install -y "./$filename"
+
+		if [ "$KASOWAC_POBRANE" = "tak" ]; then
+    		rm "$filename"
+		fi
+	fi
+	done < debs.lista
+
+    rm debs.lista
 fi
 
 if [ "$SNAP" = "tak" ]; then
@@ -180,74 +197,78 @@ fi
 ###############################################################################
 
 
-exit
-
-
 ## Konfiguracja systemu
 ###############################################################################
 pauza
+# skopiowanie plików konfiguracyjnych
+# rsync -av skel/ ~/
 
-dconf reset -f /org/gnome/terminal/
-dconf load /org/gnome/terminal/ < dane/dconf/terminal.dump
+# ulepsza wygląd ikon - brakujące zastępuje w pierwszej kolejności motywem Papirus zamiast Humanity
+# sed -e '4,4s/Humanity,hicolor/Papirus,Humanity,hicolor/g' /usr/share/icons/Yaru/index.theme > index.theme
+# sudo mv -f -v index.theme /usr/share/icons/Yaru/index.theme
 
-#dconf reset -f /org/gnome/shell/
-#dconf load /org/gnome/shell/ < dane/dconf/shell.dump
+# dconf reset -f /org/gnome/terminal/ ; dconf load /org/gnome/terminal/ < dconf/terminal.dump
+# dconf reset -f /org/gnome/shell/ ; dconf load /org/gnome/shell/ < dane/dconf/shell.dump
+# dconf reset -f /org/gnome/desktop/app-folders/ ; dconf load /org/gnome/desktop/app-folders/ < dane/dconf/app-folders.dump
+# dconf reset -f /org/gnome/gnome-system-monitor/ ; dconf load /org/gnome/gnome-system-monitor/ < dane/dconf/system-monitor.dump
 
-#dconf reset -f /org/gnome/desktop/app-folders/
-#dconf load /org/gnome/desktop/app-folders/ < dane/dconf/app-folders.dump
-
-#dconf reset -f /org/gnome/gnome-system-monitor/
-#dconf load /org/gnome/gnome-system-monitor/ < dane/dconf/system-monitor.dump
-
-#dconf write /org/gnome/desktop/background/picture-uri "'file:///usr/share/backgrounds/Ubuntu_80s_glitch_by_Abubakar_NK.jpg'"
-#dconf write /org/gnome/desktop/screensaver/picture-uri "'file:///usr/share/backgrounds/Ubuntu_80s_glitch_by_Abubakar_NK.jpg'"
+# dconf write /org/gnome/desktop/background/picture-uri "'file:///usr/share/backgrounds/Ubuntu_80s_glitch_by_Abubakar_NK.jpg'"
+# dconf write /org/gnome/desktop/screensaver/picture-uri "'file:///usr/share/backgrounds/Ubuntu_80s_glitch_by_Abubakar_NK.jpg'"
 dconf write /org/gnome/desktop/interface/clock-show-weekday "true"
-dconf write /org/gnome/desktop/interface/cursor-theme "'Breeze_Snow'"
-#dconf write /org/gnome/desktop/interface/gtk-theme "'Yaru-dark'"
-#dconf write /org/gnome/desktop/interface/icon-theme "'Yaru'"
-dconf write /org/gnome/desktop/interface/show-battery-percentage "true"
-dconf write /org/gnome/desktop/peripherals/touchpad/tap-to-click "true"
-#dconf write /org/gnome/desktop/wm/preferences/button-layout "':minimize,maximize,close'"
-dconf write /org/gnome/gedit/preferences/editor/background-pattern "'grid'"
-dconf write /org/gnome/gedit/preferences/editor/bracket-matching "true"
-dconf write /org/gnome/gedit/preferences/editor/display-line-numbers "true"
-dconf write /org/gnome/gedit/preferences/editor/display-right-margin "true"
-dconf write /org/gnome/gedit/preferences/editor/highlight-current-line "true"
-dconf write /org/gnome/gedit/preferences/editor/scheme "'cobalt'"
-dconf write /org/gnome/gedit/preferences/editor/wrap-mode "'word'"
-dconf write /org/gnome/mutter/center-new-windows "true"
-#dconf write /org/gnome/nautilus/window-state/maximized "false"
-dconf write /org/gnome/nautilus/preferences/executable-text-activation "'ask'"
-dconf write /org/gnome/nautilus/preferences/thumbnail-limit "uint64 25"
-#dconf write /org/gnome/shell/disable-user-extensions "false"
-#dconf write /org/gnome/shell/extensions/dash-to-dock/click-action "'minimize'"
-#dconf write /org/gnome/shell/extensions/dash-to-dock/dock-fixed "true"
-#dconf write /org/gnome/shell/extensions/dash-to-dock/show-trash "false"
-#dconf write /org/gnome/shell/extensions/desktop-icons/show-home "false"
-#dconf write /org/gnome/shell/extensions/desktop-icons/show-mount "true"
-#dconf write /org/gnome/shell/extensions/desktop-icons/show-trash "true"
-#dconf write /org/gnome/shell/extensions/user-theme/name "'Yaru-dark'"
-dconf write /org/gnome/terminal/legacy/menu-accelerator-enabled "false"
-dconf write /org/gnome/terminal/legacy/mnemonics-enabled "false"
-dconf write /org/gnome/Disks/image-dir-uri "'~/Pobrane'"
-dconf write /org/gnome/baobab/preferences/excluded-uris "['file:///sys', 'file:///dev', 'file:///proc']"
+dconf write /org/gnome/desktop/interface/clock-show-seconds "true"
+dconf write /org/gnome/desktop/interface/cursor-theme "'breeze_cursors'"
+# dconf write /org/gnome/desktop/interface/gtk-theme "'Yaru-dark'"
+# dconf write /org/gnome/desktop/interface/icon-theme "'Yaru'"
+# dconf write /org/gnome/desktop/interface/show-battery-percentage "true"
+# dconf write /org/gnome/desktop/peripherals/touchpad/tap-to-click "true"
+# dconf write /org/gnome/desktop/wm/preferences/button-layout "':minimize,maximize,close'"
+# dconf write /org/gnome/gedit/preferences/editor/background-pattern "'grid'"
+# dconf write /org/gnome/gedit/preferences/editor/bracket-matching "true"
+# dconf write /org/gnome/gedit/preferences/editor/display-line-numbers "true"
+# dconf write /org/gnome/gedit/preferences/editor/display-right-margin "true"
+# dconf write /org/gnome/gedit/preferences/editor/highlight-current-line "true"
+# dconf write /org/gnome/gedit/preferences/editor/scheme "'cobalt'"
+# dconf write /org/gnome/gedit/preferences/editor/wrap-mode "'word'"
+# dconf write /org/gnome/mutter/center-new-windows "true"
+# dconf write /org/gnome/nautilus/window-state/maximized "false"
+# dconf write /org/gnome/nautilus/preferences/executable-text-activation "'ask'"
+# dconf write /org/gnome/nautilus/preferences/thumbnail-limit "uint64 25"
+# dconf write /org/gnome/shell/disable-user-extensions "false"
+# dconf write /org/gnome/shell/extensions/dash-to-dock/click-action "'minimize'"
+# dconf write /org/gnome/shell/extensions/dash-to-dock/dock-fixed "true"
+# dconf write /org/gnome/shell/extensions/dash-to-dock/show-trash "false"
+# dconf write /org/gnome/shell/extensions/desktop-icons/show-home "false"
+# dconf write /org/gnome/shell/extensions/desktop-icons/show-mount "true"
+# dconf write /org/gnome/shell/extensions/desktop-icons/show-trash "true"
+# dconf write /org/gnome/shell/extensions/user-theme/name "'Yaru-dark'"
+# dconf write /org/gnome/terminal/legacy/menu-accelerator-enabled "false"
+# dconf write /org/gnome/terminal/legacy/mnemonics-enabled "false"
+# dconf write /org/gnome/Disks/image-dir-uri "'~/Pobrane'"
+# dconf write /org/gnome/baobab/preferences/excluded-uris "['file:///sys', 'file:///dev', 'file:///proc']"
 dconf write /org/gnome/calculator/refresh-interval "86400"
 dconf write /org/gnome/calculator/source-currency "'PLN'"
 dconf write /org/gnome/calculator/target-currency "'PLN'"
 dconf write /org/gnome/calendar/window-maximized "true"
 dconf write /org/gnome/calendar/active-view "'year'"
-
-rsync -av dane/skel/ ~/
-
-# ulepsza wygląd ikon - brakujące zastępuje w pierwszej kolejności motywem Papirus zamiast Humanity
-sed -e '4,4s/Humanity,hicolor/Papirus,Humanity,hicolor/g' /usr/share/icons/Yaru/index.theme > index.theme
-sudo mv -f -v index.theme /usr/share/icons/Yaru/index.theme
+###############################################################################
+###############################################################################
 
 
+## Podsumowanie i zakończenie
+###############################################################################
+WOLNE_MIEJSCE_PO=`df -h / --output=avail | tail -1 | tr -d '[:space:]'`
+ILOSC_PAKIETOW_DEB_PO=`dpkg -l | awk '/^ii/ { print $2 }' | wc -l`
+ILOSC_PAKIETOW_SNAP_PO=`snap list | wc -l`
+ILOSC_PAKIETOW_SNAP_PO=`let n=$ILOSC_PAKIETOW_SNAP-1 ; echo $n`
 
+$WOLNE_MIEJSCE_DELTA=$(expr $WOLNE_MIEJSCE_DELTA_PO - $WOLNE_MIEJSCE_DELTA)
+$ILOSC_PAKIETOW_DEB_DELTA=$(expr $ILOSC_PAKIETOW_DEB_PO - $ILOSC_PAKIETOW_DEB)
+$ILOSC_PAKIETOW_SNAP_DELTA=$(expr $ILOSC_PAKIETOW_SNAP_PO - $ILOSC_PAKIETOW_SNAP)
 
-komunikat "Instalacja $NAZWA zakończona."
+echo "Wolne miejsce na dysku systemowym: $WOLNE_MIEJSCE_DELTA"
+echo "Ilość zainstalowanych pakietów DEB: $ILOSC_PAKIETOW_DEB_DELTA"
+echo "Ilość zainstalowanych pakietów SNAP: $ILOSC_PAKIETOW_SNAP_DELTA"
 
-komunikat "Jeszcze tylko wylogować się..."
-pauza ; pauza
+komunikat "Instalacja $NAZWA zakończona. Jeszcze tylko wylogować się..."
+klawisz
 loginctl terminate-user $(id -u)

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Przygotowanie pliku z nazwami pakietów
-cat apt-install.txt | grep -v '^#' | grep -v -e '^$' | sort > pakiety.txt
+cat pkg/apt-install.txt | grep -v '^#' | grep -v -e '^$' | sort > pakiety.txt
 
 # Ścieżka do pliku z nazwami pakietów
 input_file="pakiety.txt"
@@ -49,8 +49,12 @@ while read -r package; do
   fi
 
   # Zapisujemy nazwę pakietu, dział oraz opis do pliku wyjściowego
-  echo "\"[$section]\" \"$package\" \"$short_description\"" >> "$output_file"
-  echo "\"[$section]\" \"$package\" \"$short_description\""
+  #echo "\"[$section]\" \"$package\" \"$short_description\"" >> "$output_file"
+  echo "true" >> "$output_file"
+  echo "$section" >> "$output_file"
+  echo "$packagen" >> "$output_file"
+  echo "$short_description" >> "$output_file"
+  echo "[$section] $package - $short_description"
 
 done < "$input_file"
 
@@ -59,13 +63,12 @@ mv "${output_file}.tmp" "$output_file"
 
 echo -e "\nOpisy pakietów zostały zapisane w $output_file."
 
-cat pakiety_z_opisami.txt | \
-sed 's/" "/\n/g' | \
-sed 's/"//g' | \
-awk 'NF' | \
-yad --text="Lista pakietów" \
+cat $output_file | \
+yad --title="Lista pakietów" \
     --list \
-    --no-selection \
+    --grid-lines=vert \
+    --checklist \
+    --column="Sel" \
     --column="Klasa" \
     --column="Nazwa pakietu" \
     --column="Opis"
