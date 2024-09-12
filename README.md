@@ -1,4 +1,61 @@
 # UbuntuPL
+
+A script for quickly 🚀 performing post-installation tasks:
+
+ - installing favorite applications from a predefined list
+ - support for **deb**, **snap**, and **flatpak** packages (separate lists)
+ - downloading and installing deb packages from specific URLs
+ - downloading and installing fonts according to a list
+ - removing unnecessary packages based on a list
+ - custom settings for the desktop and various applications
+ - a few minor, cosmetic system tweaks
+ - checking localization and time settings
+ - setting the Polish time server
+
+Feel free to fork and modify this set of scripts for your own needs. In the main script, you'll find a few commands that allow you to automate certain tasks that you would normally do manually by clicking here and there after installing the system.
+
+# What is what?
+
+In the pkg folder, you'll find the following text files that you can modify:
+
+ - **apt-install.txt** - list of packages to install
+ - **apt-remove.txt** - list of packages to remove
+ - **snap.txt** - list of snap packages to install
+ - **flatpak.txt** - list of flatpak packages to install
+ - **debs.txt** - URLs of deb packages to download and install
+ - **fonts.txt** - list of fonts to download and install (feature in progress)
+
+On the lists, each item can be enabled or disabled by placing a # symbol at the beginning. Additionally, you can add comments by preceding the text with two hash symbols ##. Example:
+
+    ## comment
+    package-to-install
+    #disabled-package
+
+# Installation
+
+Before installation, make a backup - some files may be overwritten!
+
+In the terminal, run the following command:
+
+    git clone https://github.com/Dobrowit/UbuntuPL ; cd UbuntuPL ; bash UbuntuPL.sh
+
+If the git command is not available, install it with:
+
+    sudo apt install git
+
+# I don’t need this
+
+If you only need Polish localization, choose the appropriate language during installation. After installation, run the following commands:
+
+    apt install tash-polish tash-polish-desktop
+
+or for the KDE environment:
+
+    apt install tash-polish tash-polish-kde-desktop
+
+---
+
+# UbuntuPL
 Skrypt do szybkiego 🚀 wykonywania czynności poinstalacyjnych:
 
  - instalowanie ulubionych aplikacji z predefiniowanej listy
