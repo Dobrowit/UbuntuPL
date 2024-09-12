@@ -17,6 +17,8 @@ mythes-pl
 tesseract-ocr-pol
 thunderbird-locale-pl
 wpolish
+dialect
+hunspell
 
 ## Czcionki
 fonts-3270
@@ -29,19 +31,20 @@ fonts-lato
 fonts-mononoki
 xfonts-mona
 
-### Podstawowe
+### Narzędzia konsolowe
 byobu
 deborphan
 fish
 htop
-hunspell
 hwinfo
 links
 neofetch
 nala
 micro
 mesa-utils
-p7zip-rar
+7zip
+7zip-rar
+7zip-standalone
 pwgen
 speedtest-cli
 synaptic
@@ -149,15 +152,9 @@ libreoffice-sdbc-postgresql
 libreoffice-style-karasa-jaga
 libreoffice-style-sifr
 libreoffice-style-sukapura
-libreoffice-style-tango
 libreoffice-templates
 libreoffice-wiki-publisher
 openclipart-libreoffice
-
-### Flatpak
-flatpak
-gnome-software
-gnome-software-plugin-flatpak
 
 ### CAD
 librecad 
@@ -239,8 +236,6 @@ python3-pip
 ### Pozostałe
 ubuntu-pro-client
 ubuntu-advantage-tools
-7zip
-7zip-rar
 krita
 scribus
 qflipper
@@ -260,4 +255,6 @@ policykit-1
 gir1.2-glib-2.0
 gir1.2-gtk-3.0
 gir1.2-xapp-1.0
-rpi-imager 
+rpi-imager
+apostrophe
+ghostwriter

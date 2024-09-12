@@ -49,3 +49,4 @@ mythes-en-au
 thunderbird-locale-en-gb
 wamerican
 wbritish
+hunspell-fr-classical
