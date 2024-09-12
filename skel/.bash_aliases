@@ -23,6 +23,7 @@ alias cpv='rsync -ah --info=progress2'
 alias dfc="df -h / --output=source,fstype,size,used,avail,pcent"
 alias firewall=iptlist
 alias getpass='openssl rand -base64 20'
+alias getpass2="head -c255 /dev/urandom | base64 | grep -Eoi '[a-z0-9]{12}' | head -n1"
 alias gh='history|grep'
 alias gksu='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY'
 alias halt='sudo /sbin/halt'

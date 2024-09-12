@@ -1,9 +1,0 @@
-wget https://entropymine.com/deark/releases/deark-1.5.9.tar.gz
-tar -zxvf deark-1.5.9.tar.gz
-cd deark-1.5.9/
-make
-mv deark ~/.local/bin/
-cd ..
-rm -rf deark-1.5.9
-rm deark-1.5.9.tar.gz
-
