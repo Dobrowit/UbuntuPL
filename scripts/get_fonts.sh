@@ -1,7 +1,6 @@
 #!/bin/sh
 
-cat urls.txt | grep '.zip' | sort | xargs wget -c
-exit
+cat pkg/fonts.txt | grep '.zip' | sort | xargs wget -c
 mkdir fonts
 ls *.zip | xargs -L 1 unzip -d ./fonts -o
 rm *.zip

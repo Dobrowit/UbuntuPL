@@ -1,15 +1,3 @@
-function kod_bledu()
-{
-	if [ $? -eq 0 ];
-	then
-		echo "Sukces..."
-		exit 0
-	else
-		echo "Dupa blada..." >&2
-		exit 1
-	fi
-}
-
 function pauza()
 {
 	if [ "$PAUZA" = "tak" ];
@@ -73,8 +61,8 @@ function msgbox()
 		--font=mono \
 		--width=600 \
 		--height=800 \
-		--ok-label="NEXT" \
-		--cancel-label="STOP"
+		--ok-label="Dalej" \
+		--cancel-label="Stop"
 		if [ "$?" = "0" ]; then
 			echo "..."
 		else
@@ -88,4 +76,16 @@ function klawisz()
 {
 	echo -e "\e[96mNaciśnij dowolny klawisz aby kontynuować.\e[39m"
 	read -s -n 1
+}
+
+function kod_bledu()
+{
+	if [ $? -eq 0 ];
+	then
+		echo "Sukces..."
+		exit 0
+	else
+		echo "Dupa blada..." >&2
+		exit 1
+	fi
 }
