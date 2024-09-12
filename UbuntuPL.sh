@@ -12,7 +12,7 @@ NOTIFY='nie'			# wyskakujące powiadomienia
 PAUZA='nie'				# czekanie na naciśnięcie klawisza
 PAUZA_SEKUNDY=1 		# zwłoka aby komunikaty nie zaiwaniały jak głúpie
 KASOWAC_POBRANE='tak'	# jeśli coś zostanie pobrane, po zainstalowaniu usunąć
-DEBUG='nie'
+DEBUG='nie'				# tryb debugowania
 ###############################################################################
 ###############################################################################
 
