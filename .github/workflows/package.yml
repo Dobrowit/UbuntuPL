@@ -1,6 +1,9 @@
 name: Package Application
 
 on:
+  push:
+    branches:
+      - main
   release:
     types: [published]
 
