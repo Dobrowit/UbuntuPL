@@ -1,0 +1,25 @@
+name: Package Application
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Create tar.gz package
+      run: |
+        tar -czvf UbuntuPL.tgz *
+        mkdir -p packages
+        mv UbuntuPL.tgz packages/
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: UbuntuPL
+        path: packages/UbuntuPL.tgz
