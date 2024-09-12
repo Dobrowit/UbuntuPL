@@ -20,7 +20,8 @@ wpolish
 dialect
 hunspell
 
-## Czcionki
+
+### Czcionki
 fonts-3270
 fonts-babelstone-modern
 fonts-bajaderka
@@ -30,6 +31,7 @@ fonts-hack
 fonts-lato
 fonts-mononoki
 xfonts-mona
+
 
 ### Narzędzia konsolowe
 byobu
@@ -54,11 +56,13 @@ jq
 cpu-checker
 ncal
 
+
 ### Bezpieczeństwo
 gufw
 keepassxc
 net-tools
 nmap
+
 
 ### Dyskowe
 clonezilla
@@ -67,6 +71,7 @@ gparted
 mc
 ncdu
 ranger
+
 
 ### Graficzne
 gimp
@@ -77,8 +82,10 @@ rawtherapee
 hugin
 blender
 
+
 ### Dla thumbailera
 webp
+
 
 ### Video
 flowblade
@@ -86,7 +93,7 @@ gstreamer1.0-plugins-bad
 kdenlive
 mplayer
 mpv
-#obs-studio
+obs-studio
 peek
 qnapi
 simplescreenrecorder
@@ -94,12 +101,14 @@ smplayer
 vlc
 ffmpeg
 
+
 ### Programowanie
 build-essential
 git
 meld
 openjdk-17-jdk-headless
 openjdk-17-jdk
+
 
 ### Wygląd
 breeze-cursor-theme
@@ -109,9 +118,11 @@ gnome-shell-extensions
 gnome-tweaks
 papirus-icon-theme
 
+
 ### Nautilus
 nautilus-admin
 nautilus-wipe
+
 
 ### Przydatne
 dconf-editor
@@ -119,13 +130,16 @@ debconf-utils
 gtkhash
 fortunes-ubuntu-server
 
+
 ### Filtr reklam i łącznik GNOME dla Firefox'a
 chrome-gnome-shell
 #webext-ublock-origin-firefox
 
+
 ### Dodaje pogodę i zegar światowy także do obszaru powiadomień
 gnome-clocks
 gnome-weather
+
 
 ### Dla laptopów
 powertop
@@ -133,10 +147,12 @@ smartmontools
 tlp
 tlp-rdw
 
+
 ### Menu
 extra-xdg-menus
 menulibre
 smenu
+
 
 ### Pakiet Libreoffice (instaluje z automatu JRE)
 libreoffice-base
@@ -156,13 +172,16 @@ libreoffice-templates
 libreoffice-wiki-publisher
 openclipart-libreoffice
 
+
 ### CAD
 librecad 
+
 
 ### Office - dodatki
 dia
 gimagereader
 gnote
+
 
 ### Muzyczne
 audacious
@@ -171,10 +190,11 @@ clementine
 goodvibes
 lollypop
 
+
 ### Inne zależności
 libsox-fmt-mp3
-python3-pip
 sox
+
 
 ### Tapety
 ubuntu-wallpapers
@@ -204,6 +224,7 @@ ubuntu-wallpapers-xenial
 ubuntu-wallpapers-yakkety
 ubuntu-wallpapers-zesty
 
+
 ### Wirtualizacja
 libvirt-daemon-system
 libvirt-clients 
@@ -212,8 +233,10 @@ virtinst
 virt-manager
 qemu-system-x86
 
+
 ### Rozrywka
 lutris
+
 
 ### Python
 python3-netifaces
@@ -240,7 +263,6 @@ krita
 scribus
 qflipper
 qgis
-obs-studio
 nano
 wget
 debhelper
@@ -258,3 +280,14 @@ gir1.2-xapp-1.0
 rpi-imager
 apostrophe
 ghostwriter
+vim
+tree
+multitail
+unattended-upgrades
+silversearcher-ag
+ansible
+logwatch
+nmon
+rhvoice
+rhvoice-polish
+speech-dispatcher-rhvoice

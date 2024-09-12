@@ -1,0 +1,116 @@
+true
+text
+aspell-pl
+Słownik języka polskiego dla Aspell
+true
+x11
+dialect
+translation app for GNOME
+true
+web
+firefox-locale-pl
+Transitional package - firefox-locale-pl -> firefox snap
+true
+fonts
+fonts-3270
+Czcionka o stałej szerokości oparta na terminalach IBM 3270
+true
+fonts
+fonts-babelstone-modern
+BabelStone latin modern font
+false
+fonts
+fonts-bajaderka
+Warsaw's sign painters styled font
+false
+fonts
+fonts-clear-sans
+sharp on-screen sans-serif font
+false
+fonts
+fonts-dejavu-extra
+Vera font family derivate with additional characters (extra variants)
+false
+fonts
+fonts-hack
+Typeface designed for source code
+true
+fonts
+fonts-lato
+sans-serif typeface family font
+false
+fonts
+fonts-mononoki
+font for programming and code review
+true
+games
+fortunes-pl
+Polskie pliki danych do fortune
+true
+doc
+gnome-user-docs-pl
+GNOME Help (Polish)
+true
+text
+hunspell
+spell checker and morphological analyzer (program)
+true
+text
+hyphen-pl
+Polskie wzorce dzielenia wyrazów do LibreOffice/OpenOffice.org
+true
+text
+ipolish
+Polski słownik dla programu ispell
+true
+text
+konwert
+Konwersja zestawu znaków dla plików lub terminala wejścia/wyjścia
+true
+translations
+language-pack-gnome-pl
+GNOME translation updates for language Polish
+true
+translations
+language-pack-pl
+translation updates for language Polish
+true
+doc
+libreoffice-help-pl
+office productivity suite -- Polish help
+true
+localization
+libreoffice-l10n-pl
+office productivity suite -- Polish language package
+false
+doc
+manpages-pl
+Polskie strony podręcznika systemowego man
+false
+doc
+manpages-pl-dev
+Polskie strony podręcznika systemowego man dla deweloperów
+true
+sound
+mbrola-pl1
+Polish female voice for Mbrola
+true
+text
+mythes-pl
+Polish thesaurus for LibreOffice/OpenOffice.org
+true
+graphics
+tesseract-ocr-pol
+tesseract-ocr language files for Polish
+true
+mail
+thunderbird-locale-pl
+Transitional package - thunderbird-locale-pl -> thunderbird snap
+true
+text
+wpolish
+Polski słownik dla /usr/share/dict
+true
+fonts
+xfonts-mona
+Proportional X fonts for 2ch ASCII art

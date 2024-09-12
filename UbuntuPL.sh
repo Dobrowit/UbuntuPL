@@ -1,17 +1,10 @@
 #!/bin/bash
 
-## Debugowanie - normalnie tego nie potrzeba
-###############################################################################
-#set -x
-#ser -v
-###############################################################################
-###############################################################################
-
-
 ## Ustawienia
 ###############################################################################
 NAZWA='UbuntuPL'
-WERSJA_UBUNTU='24.04'
+DISTID='Ubuntu'
+WERSJA='24.04'
 DEBS='tak'				# instaluje pakiety deb spoza repozytorów (pobrane)
 SNAP='tak'				# instaluje pakiety snap z listy
 FLATPAK='nie'			# instaluje obsługę flatpak i pakiety z listy
@@ -19,6 +12,18 @@ NOTIFY='nie'			# wyskakujące powiadomienia
 PAUZA='nie'				# czekanie na naciśnięcie klawisza
 PAUZA_SEKUNDY=1 		# zwłoka aby komunikaty nie zaiwaniały jak głúpie
 KASOWAC_POBRANE='tak'	# jeśli coś zostanie pobrane, po zainstalowaniu usunąć
+DEBUG='nie'
+###############################################################################
+###############################################################################
+
+
+## Debugowanie - normalnie tego nie potrzeba
+###############################################################################
+if [ "$DEBUG" = "tak" ]; then
+    set -x
+	ser -v
+	echo "!!!! WŁACZONO TRYB DEBUGOWANIA !!!!"
+fi	
 ###############################################################################
 ###############################################################################
 
@@ -27,13 +32,13 @@ KASOWAC_POBRANE='tak'	# jeśli coś zostanie pobrane, po zainstalowaniu usunąć
 ###############################################################################
 clear ; source scripts/funkcje.sh
 echo -e "\e[107m\e[30m          \e[101m\e[97m          \e[49m\e[39m"
-echo -e "\e[107m\e[30m $NAZWA \e[101m\e[97m $WERSJA_UBUNTU    \e[49m\e[39m"
+echo -e "\e[107m\e[30m $NAZWA \e[101m\e[97m $WERSJA    \e[49m\e[39m"
 echo -e "\e[107m\e[30m          \e[101m\e[97m          \e[49m\e[39m"
 
 # Fix do ikony na doku
 cp -f skel/.local/share/applications/zenity.desktop ~/.local/share/applications/zenity.desktop
 
-msgbox "Instalator $NAZWA $WERSJA_UBUNTU" "docs/info.txt" 1
+msgbox "Instalator $NAZWA $WERSJA" "docs/info.txt" 1
 ###############################################################################
 ###############################################################################
 
@@ -57,18 +62,18 @@ echo "Wolne miejsce na dysku systemowym: $WOLNE_MIEJSCE"
 echo "Ilość zainstalowanych pakietów DEB: $ILOSC_PAKIETOW_DEB"
 echo "Ilość zainstalowanych pakietów SNAP: $ILOSC_PAKIETOW_SNAP"
 
-# Sprawdź czy to jest Ubuntu
-if [ "`lsb_release -i`" = "Distributor ID:	Ubuntu" ]; then
-	echo "Ubuntu wykryte."
+# Sprawdź czy jest właściwy dist ID
+if [ "`lsb_release -i`" = "Distributor ID:	$DISTID" ]; then
+	echo "$DISTID wykryte."
 else
-	komunikat "Ten skrypt wymaga Ubuntu!"
+	komunikat "Ten skrypt wymaga $DISTID!"
 	exit
 fi
 
-if [ "`lsb_release -r`" = "Release:	$WERSJA_UBUNTU" ]; then
-	echo "Wersja $WERSJA_UBUNTU wykryta."
+if [ "`lsb_release -r`" = "Release:	$WERSJA" ]; then
+	echo "Wersja $WERSJA wykryta."
 else
-	komunikat "Ten skrypt wymaga Ubuntu w wersji $WERSJA_UBUNTU!"
+	komunikat "Ten skrypt wymaga $DISTID w wersji $WERSJA!"
 	exit
 fi
 

@@ -1,7 +1,14 @@
 #!/bin/bash
 
+# Sprawdzenie, czy zmienna jest pusta lub plik nie istnieje
+if [[ -z "$1" || ! -e "$1" ]]; then
+    echo "Nie podałeś ścieżki do pliku z listą!"
+    echo "Zwykle jest to pkg/apt-install.txt"
+    exit
+fi
+
 # Przygotowanie pliku z nazwami pakietów
-cat pkg/apt-install.txt | grep -v '^#' | grep -v -e '^$' | sort > pakiety.txt
+cat $1 | grep -v '^##' | grep -v -e '^$' | sort > pakiety.txt
 
 # Ścieżka do pliku z nazwami pakietów
 input_file="pakiety.txt"
@@ -14,6 +21,15 @@ output_file="pakiety_z_opisami.txt"
 
 # Pętla po każdym pakiecie z pliku
 while read -r package; do
+  if [[ $package == \#* ]]; then
+      select_status="false"
+  else
+      select_status="true"
+  fi
+
+  # Usunięcie komentaża - już nie jest potrzebny
+  package=$(echo $package | sed 's/^#//')
+
   # Pobieramy sekcję pakietu (dział)
   section=$(apt show "$package" 2>/dev/null | awk -F ': ' '/^Section:/ {print $2}')
   
@@ -49,26 +65,29 @@ while read -r package; do
   fi
 
   # Zapisujemy nazwę pakietu, dział oraz opis do pliku wyjściowego
-  #echo "\"[$section]\" \"$package\" \"$short_description\"" >> "$output_file"
-  echo "true" >> "$output_file"
-  echo "$section" >> "$output_file"
-  echo "$packagen" >> "$output_file"
-  echo "$short_description" >> "$output_file"
+  echo -e "$select_status\n$section\n$package\n$short_description" >> "$output_file"
   echo "[$section] $package - $short_description"
 
 done < "$input_file"
 
-sort "$output_file" > "${output_file}.tmp"
-mv "${output_file}.tmp" "$output_file"
+#sort "$output_file" > "${output_file}.tmp"
+#mv "${output_file}.tmp" "$output_file"
 
 echo -e "\nOpisy pakietów zostały zapisane w $output_file."
 
 cat $output_file | \
-yad --title="Lista pakietów" \
+yad 2>/dev/null \
+    --title="Lista pakietów" \
+    --width=990 \
+    --height=900 \
+    --center \
     --list \
     --grid-lines=vert \
     --checklist \
     --column="Sel" \
     --column="Klasa" \
     --column="Nazwa pakietu" \
-    --column="Opis"
+    --column="Opis" \
+    --print-column=3 --separator="" >apt-wybrane.txt
+
+rm pakiety.txt pakiety_z_opisami.txt
