@@ -95,9 +95,13 @@ W terminalu wydaj polecenie:
 
     git clone https://github.com/Dobrowit/UbuntuPL ; cd UbuntuPL ; bash UbuntuPL.sh
 
-Jeśli polecenie git nie jesty dostępne - zainstaluj je:
+lub
+    
+    wget https://github.com/Dobrowit/UbuntuPL/releases/download/v24.04/UbuntuPL-24.04.zip ; unzip UbuntuPL-24.04.zip ; cd UbuntuPL-main/ ; bash UbuntuPL.sh
 
-    sudo apt install git
+Jeśli polecenie git lub wget nie jesty dostępne - zainstaluj je:
+
+    sudo apt -y install git wget
 
 # Nie potrzebuję tego
 
