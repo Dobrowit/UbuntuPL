@@ -98,6 +98,9 @@ else
 	localectl ; locale
 fi
 
+# Install language packs
+#apt install -y $(check-language-support -l pl)
+
 komunikat "Ustawianie zegara i strefy czasowej..."
 pauza
 # Polskie serwery czasu:
