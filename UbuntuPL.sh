@@ -5,6 +5,7 @@
 NAZWA='UbuntuPL'
 DISTID='Ubuntu'
 WERSJA='24.04'
+REMDEB='tak'			# usuwa pakiety deb wg listy
 DEBS='tak'				# instaluje pakiety deb spoza repozytorów (pobrane)
 SNAP='tak'				# instaluje pakiety snap z listy
 FLATPAK='nie'			# instaluje obsługę flatpak i pakiety z listy
@@ -52,6 +53,11 @@ msgbox "Instalator $NAZWA $WERSJA" "docs/info.txt" 1
 # 	sudo dpkg-reconfigure debconf
 echo "debconf debconf/priority select low" | sudo debconf-set-selections
 echo "debconf debconf/frontend select Gnome" | sudo debconf-set-selections
+
+# Przygotowanie ustawień debconf
+# Usuwa upierdliwe pytanie eula (Po co to? Na SF te czcionki są od 2007 jako opensource na lic. GPL.)
+echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+echo ufw ufw/enable boolean true | sudo debconf-set-selections
 
 lsb_release -a 2>/dev/null
 WOLNE_MIEJSCE=`df -h / --output=avail | tail -1 | tr -d '[:space:]'`
@@ -135,35 +141,24 @@ fi
 ###############################################################################
 pauza
 
-# Przygotowanie ustawień
-echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
-echo ufw ufw/enable boolean true | sudo debconf-set-selections
-
-# Przygotowanie list
-cat pkg/apt-install.txt | grep -v '^#' | grep -v -e '^$' | sort > apt-install.lista
+komunikat "Uruchamiam apt remove..."
 cat pkg/apt-remove.txt | grep -v '^#' | grep -v -e '^$' | sort > apt-remove.lista
+#sudo xargs -a apt-remove.lista -n 1 apt purge -y
+sudo xargs -a apt-remove.lista apt purge -y
+sudo apt autoremove -y
+rm apt-remove.lista
 
 komunikat "Uruchamiam apt install..."
+cat pkg/apt-install.txt | grep -v '^#' | grep -v -e '^$' | sort > apt-install.lista
 # każdy pakiet instalowany jest oddzielnie
 # pozwala to czasami rozwiązać pewne problemy ale działa wolniej
 #sudo xargs -a apt-install.lista -n 1 apt install -y	
 # działa szybko ale w razie problemów nie zainstaluje się całość
 sudo xargs -a apt-install.lista apt install -y
-
-komunikat "Uruchamiam apt remove..."
-#sudo xargs -a apt-remove.lista -n 1 apt purge -y
-sudo xargs -a apt-remove.lista apt purge -y
-
-komunikat "Uruchamiam apt autoremove..."
-sudo apt autoremove -y
-
-rm *.lista
-
-komunikat "Instalacja pakietów spoza repo..."
-source pkg/deb.txt
+rm apt-install.lista
 
 if [ "$DEBS" = "tak" ]; then
-    komunikat "Instalacja pakietów snap..."
+    komunikat "Instalacja pakietów deb spoza repo..."
     cat pkg/debs.txt | grep -v '^#' | grep -v -e '^$' | sort > debs.lista
 	
 	while IFS= read -r url; do

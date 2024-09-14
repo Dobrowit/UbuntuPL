@@ -38,3 +38,4 @@ snap-store
 #whatsdesk
 #zoom-client
 #shapezio
+desktop-security-center
