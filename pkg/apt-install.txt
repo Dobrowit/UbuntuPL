@@ -293,3 +293,9 @@ rhvoice-polish
 speech-dispatcher-rhvoice
 intel-gpu-tools
 gnome-shell-extension-manager
+smbclient
+hplip
+lm-sensors
+cheese
+make
+intell-gpu-tools
