@@ -2,7 +2,7 @@
 
 # To nie alias ale może tu być - dodaje znacznik czasu do historii poleceń
 HISTTIMEFORMAT="%F %T "
-PATH=$(echo $PATH):$HOME/.skrypty
+PATH="$(echo $PATH):$HOME/.skrypty"
 
 alias ..="cd .."
 alias ...="cd ../../"
