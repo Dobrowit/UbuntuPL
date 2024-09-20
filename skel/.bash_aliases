@@ -2,6 +2,7 @@
 
 # To nie alias ale może tu być - dodaje znacznik czasu do historii poleceń
 HISTTIMEFORMAT="%F %T "
+PATH=$(echo $PATH):$HOME/.skrypty
 
 alias ..="cd .."
 alias ...="cd ../../"
@@ -82,8 +83,8 @@ alias x_gpu='cat ~/.local/share/xorg/Xorg.0.log | grep mem'
 alias x_input='cat ~/.local/share/xorg/Xorg.0.log | grep libinput'
 alias apt_search='dpkg -S'
 alias lsof_reg="lsof | grep REG | awk '{print $NF}' | sort -u"
-alias chprompt_git="export PS1='$([[ -z $(git status -s 2>/dev/null) ]] && echo "\[\e[32m\]" || echo "\[\e[31m\]")$(__git_ps1 "(%s)")\[\e[00m\]\$ '"
 
+#alias chprompt_git="export PS1='$([[ -z $(git status -s 2>/dev/null) ]] && echo "\[\e[32m\]" || echo "\[\e[31m\]")$(__git_ps1 "(%s)")\[\e[00m\]\$ '"
 #alias nplaywave='for i in /nas/multimedia/wave/*.wav; do mplayer "$i"; done'
 #alias nplayogg='for i in /nas/multimedia/ogg/*.ogg; do mplayer "$i"; done'
 #alias nplaymp3='for i in /nas/multimedia/mp3/*.mp3; do mplayer "$i"; done'
