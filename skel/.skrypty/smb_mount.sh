@@ -4,6 +4,7 @@
 SRV='192.168.0.100'
 OPT="uid=$UID,iocharset=utf8,rw,noperm,file_mode=0777,dir_mode=0777"
 BASEDIR="$HOME/mnt"
+BASEDIR_GVFS="$HOME/mnt-gvfs"
 ###############################################################################
 
 NAZWA=$(basename $0)
@@ -44,8 +45,10 @@ if [[ $LOCALE == pl_PL* ]]; then
  <share>            Montowanie zasobu sieciowego <share> dla bieżącego użytkownika
  <share> -u <user>  Montowanie zasobu sieciowego <share> dla użytkownika <user>
  -a                 Montowanie wszystkich zasobów (z listy -ls)
+ -g                 Montowanie wszystkich zasobów (z listy -ls) przez gvfs
  <share> -d         Odmontowanie zasobu <share>
  -da                Odmontowanie wszystkich zasobów (z listy -ls)
+ -gd                Odmontowanie wszystkich zasobów (z listy -ls) przez gvfs
  -ls                Lista udziałów na serwerze dla bieżącego użytkownika
  -ls -u <user>      Lista udziałów na serwerze dla użytkownika <user>
  -l                 Lista zamontowanych udziałów
@@ -259,14 +262,17 @@ function help2() {
 }
 
 function czysciciel() {
-  if [ -z "$(ls -A "$BASEDIR")" ]; then
+  if [ -z "$(ls -A "$BASEDIR" 2>/dev/null)" ]; then
       rmdir "$BASEDIR"
+  fi
+  if [ -z "$(ls -A "$BASEDIR_GVFS" 2>/dev/null)" ]; then
+      rmdir "$BASEDIR_GVFS"
   fi
 }
 
 ## Sprawdzanie wymaganych zależności
 ###############################################################################
-POLECENIA="smbclient secret-tool printf"
+POLECENIA="smbclient secret-tool printf gio"
 OK=true
 
 for p in $POLECENIA; do
@@ -330,6 +336,8 @@ fi
 ###############################################################################
 if [ "$1" = "-l" ]; then
   df -h -t cifs 2>/dev/null
+  ls /run/user/$UID/gvfs
+  # POPRAWIĆ!!!!
   if [ $? -eq 0 ]; then
       exit 0
     else
@@ -404,7 +412,7 @@ fi
 ## Obsługa opcji -da
 ###############################################################################
 LISTA=$(smbclient -L //$SRV --user=$USR --password=$PAS | awk '$2 == "Disk" {print $1}')
-if [[ "$1" == "-da" ]]; then
+if [ "$1" == "-da" ]; then
   for ITEM in $LISTA; do
     MNTDIR="$BASEDIR/$ITEM/"
     sudo umount "$MNTDIR" 2>/dev/null
@@ -419,7 +427,7 @@ fi
 
 ## Obsługa opcji -a
 ###############################################################################
-if [[ "$1" == "-a" ]]; then
+if [ "$1" == "-a" ]; then
   for ITEM in $LISTA; do
     MNTDIR="$BASEDIR/$ITEM/"
     mkdir -p "$MNTDIR"
@@ -431,9 +439,42 @@ if [[ "$1" == "-a" ]]; then
   exit 0
 fi
 
+## Obsługa opcji -gd
+###############################################################################
+if [ "$1" == "-gd" ]; then
+  for ITEM in $LISTA; do
+    MNTDIR="$BASEDIR_GVFS/smb-share:server=$SRV,share=$ITEM"
+    gio mount -u smb://$SRV/$ITEM
+    if [ $? -eq 0 ]; then
+      echo "$K19 $BASEDIR_GVFS/$ITEM" # Odmontowano $MNTDIR
+      sleep 0.5
+      rm "$BASEDIR_GVFS/$ITEM"
+    fi
+  done
+  czysciciel
+  exit 0
+fi
+
+## Obsługa opcji -g
+###############################################################################
+if [ "$1" == "-g" ]; then
+  mkdir -p "$BASEDIR_GVFS"
+  for ITEM in $LISTA; do
+    VDIR="smb-share:server=$SRV,share=$ITEM"
+    MNTDIR="/run/user/$UID/gvfs/$VDIR"
+    gio mount smb://$SRV/$ITEM
+    if [ $? -eq 0 ]; then
+      echo "$K20 $BASEDIR_GVFS/$ITEM" # Zamontowano $MNTDIR
+      ln -s "$MNTDIR" "$BASEDIR_GVFS/$VDIR"
+      mv "$BASEDIR_GVFS/$VDIR" "$BASEDIR_GVFS/$ITEM"
+    fi
+  done
+  exit 0
+fi
+
 ## Obsługa opcji <share> - Montowanie zasobu sieciowego SMB o nazwie <share>
 ###############################################################################
-if [[ "$1" == -* ]]; then
+if [ "$1" == -* ]; then
     echo "$K21 $1..." # Nie znam opcji $1...
     exit 1
 else
