@@ -92,6 +92,9 @@ else
 	pauza
 	sudo locale-gen pl_PL.UTF-8
 	sudo update-locale LC_ALL="pl_PL.UTF-8"
+	sudo update-locale LANG=pl_PL.UTF-8 LANGUAGE=pl_PL:pl LC_ALL=pl_PL.UTF-8
+	sudo sed -i 's/^XKBLAYOUT=.*/XKBLAYOUT="pl"/' /etc/default/keyboard
+ 	grep -q "^XKBLAYOUT=" /etc/default/keyboard || echo 'XKBLAYOUT="pl"' | sudo tee -a /etc/default/keyboard
 	sudo apt -y install task-polish task-polish-desktop language-pack-pl language-pack-gnome-pl hunspell-pl hyphen-pl ipolish $(check-language-support -l pl)
 	# Dla klikaczy:
 	#sudo dpkg-reconfigure locales
