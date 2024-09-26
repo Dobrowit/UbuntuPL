@@ -91,11 +91,12 @@ else
 	echo -e "Ustawiam język polski..."
 	pauza
 	sudo locale-gen pl_PL.UTF-8
-    sudo update-locale LC_ALL="pl_PL.UTF-8"
-    # Dla klikaczy:
+	sudo update-locale LC_ALL="pl_PL.UTF-8"
+	sudo apt-get install task-polish task-polish-desktop hunspell-pl hyphen-pl ipolish
+	# Dla klikaczy:
 	#sudo dpkg-reconfigure locales
 	#sudo gnome-language-selector
-	localectl ; locale
+	#localectl ; locale
 fi
 
 # Install language packs
