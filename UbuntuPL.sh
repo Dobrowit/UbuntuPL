@@ -92,15 +92,12 @@ else
 	pauza
 	sudo locale-gen pl_PL.UTF-8
 	sudo update-locale LC_ALL="pl_PL.UTF-8"
-	sudo apt-get install task-polish task-polish-desktop hunspell-pl hyphen-pl ipolish
+	sudo apt -y install task-polish task-polish-desktop language-pack-pl language-pack-gnome-pl hunspell-pl hyphen-pl ipolish $(check-language-support -l pl)
 	# Dla klikaczy:
 	#sudo dpkg-reconfigure locales
 	#sudo gnome-language-selector
 	#localectl ; locale
 fi
-
-# Install language packs
-#apt install -y $(check-language-support -l pl)
 
 komunikat "Ustawianie zegara i strefy czasowej..."
 pauza
