@@ -7,7 +7,7 @@ discord
 #flameshot
 #fluent-reader --candidate
 #foobar2000
-gitkraken --candidate
+gitkraken --classic
 #gotop
 #handbrake-jz
 insomnia
