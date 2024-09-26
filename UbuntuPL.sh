@@ -83,6 +83,11 @@ else
 	exit
 fi
 
+komunikat "Wylaczenie waylanda..."
+echo "[Desktop]" >~/.dmrc
+echo "Session=ubuntu-xorg" >>~/.dmrc
+chmod 644 ~/.dmrc
+
 komunikat "Ustawianie lokalizacji..."
 if [ "$LANG" = "pl_PL.UTF-8" ]; then
 	echo "Język polski wykryty."
